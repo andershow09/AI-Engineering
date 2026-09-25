@@ -1,0 +1,12 @@
+{
+  "skills-integrity": {
+    "enabled": true,
+    "Stop": [
+      {
+        "type": "command",
+        "command": "powershell -ExecutionPolicy Bypass -File .agents/scripts/validate-skills.ps1",
+        "timeout": 15
+      }
+    ]
+  }
+}
