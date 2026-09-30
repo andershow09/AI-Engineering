@@ -1,5 +1,5 @@
 #!/bin/sh
-# Git Pre-Commit Hook: Valida a integridade das skills antes de permitir o commit
+# Git Pre-Commit Hook: Valida a integridade das skills e o guardrail de cobertura
 echo "🔍 [Pre-Commit Hook] Executando validacao deterministica das skills..."
 
 powershell -ExecutionPolicy Bypass -File .agents/scripts/validate-skills.ps1
@@ -10,5 +10,14 @@ if [ $EXIT_CODE -ne 0 ]; then
   exit 1
 fi
 
-echo "✅ [Pre-Commit Hook] Integridade confirmada. Permitindo commit."
+echo "🔍 [Pre-Commit Hook] Verificando guardrail de cobertura e thresholds..."
+powershell -ExecutionPolicy Bypass -File .agents/scripts/verify-coverage-guardrail.ps1 -ProjectPath .
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo "❌ [Pre-Commit Hook] Falha no guardrail de testes e cobertura! Commit cancelado."
+  exit 1
+fi
+
+echo "✅ [Pre-Commit Hook] Integridade e guardrails confirmados. Permitindo commit."
 exit 0

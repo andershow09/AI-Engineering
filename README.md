@@ -61,7 +61,11 @@ O repositório inclui scripts utilitários em PowerShell para automação do cic
   ```powershell
   powershell -ExecutionPolicy Bypass -File .agents/scripts/validate-skills.ps1
   ```
-- **`setup-git-hooks.ps1`**: Configura o pre-commit hook do repositório para impedir commits se alguma skill estiver corrompida.
+- **`verify-coverage-guardrail.ps1`**: Validador do guardrail de testes e thresholds de cobertura (detecta ausência de thresholds, valida sintaxes e bloqueia baixa cobertura).
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File .agents/scripts/verify-coverage-guardrail.ps1 -ProjectPath "C:\caminho\do\projeto"
+  ```
+- **`setup-git-hooks.ps1`**: Configura o pre-commit hook do repositório para impedir commits se alguma skill ou guardrail estiver violado.
   ```powershell
   powershell -ExecutionPolicy Bypass -File .agents/scripts/setup-git-hooks.ps1
   ```

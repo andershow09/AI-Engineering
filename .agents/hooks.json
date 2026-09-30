@@ -8,5 +8,15 @@
         "timeout": 15
       }
     ]
+  },
+  "coverage-guardrail": {
+    "enabled": true,
+    "Stop": [
+      {
+        "type": "command",
+        "command": "powershell -ExecutionPolicy Bypass -File .agents/scripts/verify-coverage-guardrail.ps1 -ProjectPath .",
+        "timeout": 15
+      }
+    ]
   }
 }

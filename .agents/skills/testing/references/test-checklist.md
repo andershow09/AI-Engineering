@@ -34,3 +34,14 @@ Utilize este checklist para avaliar a qualidade e a robustez dos testes antes de
 
 - [ ] Testes unitários executam rapidamente (na ordem de milissegundos)?
 - [ ] Testes mais lentos de integração ou E2E estão devidamente categorizados e não atrasam desnecessariamente o loop local de desenvolvimento?
+
+---
+
+## 5. Guardrail de Cobertura e Thresholds Mínimos (Bloqueante)
+
+- [ ] Os thresholds mínimos de cobertura estão formalmente configurados no test runner (`vitest.config`, `jest.config`, etc.)?
+- [ ] A sintaxe dos thresholds está correta para o runner específico (ex.: no Vitest os thresholds são diretos em `coverage.thresholds`, sem encapsular em `global`)?
+- [ ] A execução dos testes rodou com `--coverage` sem disparar falhas de limite?
+- [ ] A cobertura atinge ou supera a meta estabelecida (mínimo global de 80% ou meta incremental de ratcheting)?
+- [ ] Em projetos legados com baixa cobertura, o threshold foi travado no patamar atual para impedir regressões silenciosas?
+- [ ] Módulos novos ou refatorados possuem cobertura rigorosa (90%+)?

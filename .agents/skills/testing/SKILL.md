@@ -51,8 +51,20 @@ flowchart TD
 
 ---
 
+## Guardrail de Cobertura e Thresholds Mandatórios
+
+> [!CAUTION]
+> **Thresholds Inexistentes ou Cobertura Abaixo do Mínimo Bloqueiam a Entrega.**
+> 1. Todo projeto com suíte de testes DEVE ter thresholds de cobertura explicitamente configurados (Vitest, Jest, Karma, etc.).
+> 2. Padrão mínimo global: **80% de Linhas, Declarações, Funções e Ramos**.
+> 3. Em projetos legados com baixa cobertura, aplique **Ratcheting**: fixe o threshold no patamar atual para prevenir regressões e aumente progressivamente a cada nova entrega.
+> 4. A execução de testes DEVE rodar com `--coverage` e passar com exit code 0 sem falha de threshold.
+
+---
+
 ## Guias Detalhados
 
+- 🛡️ **[Guardrail de Cobertura e Thresholds](./references/coverage-thresholds-guardrail.md):** Regras mandatórias de bloqueio, sintaxe correta por test runner (Vitest vs Jest vs Karma) e ratcheting.
 - 📖 **[Testes Unitários e Mocking](./references/unit-testing.md):** Estrutura AAA (Arrange-Act-Assert), fakes, mocks, stubs e boas práticas de asserção.
 - 📖 **[Testes de Integração e E2E](./references/integration-e2e.md):** Estratégias de banco de testes, isolamento de rede, Playwright/Cypress e prevenção de testes flaky.
 - 📋 **[Checklist de Validação de Testes](./references/test-checklist.md):** Verificações essenciais antes de aprovar novas suites de teste.

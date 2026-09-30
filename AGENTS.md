@@ -26,33 +26,41 @@ Todas as tarefas de codificaÃ§Ã£o, design e refatoraÃ§Ã£o devem aderir r
 - **D - Dependency Inversion Principle (DIP):** Dependa de abstraÃ§Ãµes, nÃ£o de implementaÃ§Ãµes concretas. MÃ³dulos de alto nÃ­vel nÃ£o devem depender de mÃ³dulos de baixo nÃ­vel.
 
 ### 2.2. Clean Code
-- **Nomenclatura expressiva:** Nomes de variÃ¡veis, funÃ§Ãµes e classes devem revelar intenÃ§Ã£o, ser pronunciÃ¡veis e evitar desinformaÃ§Ã£o.
-- **FunÃ§Ãµes pequenas e focadas:** FunÃ§Ãµes devem fazer apenas uma coisa, com um Ãºnico nÃ­vel de abstraÃ§Ã£o e sem efeitos colaterais ocultos.
-- **Tratamento defensivo e robusto de erros:** Use exceÃ§Ãµes com contexto significativo; evite retornar ou propagar `null`/`undefined` sem necessidade.
-- **PrincÃ­pio Boy Scout:** Deixe o cÃ³digo mais limpo do que quando vocÃª o encontrou.
+- **Nomenclatura expressiva:** Nomes de variáveis, funções e classes devem revelar intenção, ser pronunciáveis e evitar desinformação.
+- **Funções pequenas e focadas:** Funções devem fazer apenas uma coisa, com um único nível de abstração e sem efeitos colaterais ocultos.
+- **Tratamento defensivo e robusto de erros:** Use exceções com contexto significativo; evite retornar ou propagar `null`/`undefined` sem necessidade.
+- **Princípio Boy Scout:** Deixe o código mais limpo do que quando você o encontrou.
 - **Simplicidade:** Aplique ativamente **KISS** (*Keep It Simple, Stupid*), **DRY** (*Don't Repeat Yourself*) e **YAGNI** (*You Aren't Gonna Need It*).
 
-> Para guias detalhados e checklists de implementaÃ§Ã£o, utilize a skill de engenharia em [`.agents/skills/engineering/SKILL.md`](.agents/skills/engineering/SKILL.md).
+### 2.3. Guardrail Mandatório de Testes e Cobertura (Coverage Thresholds)
+- **Zero Untested Code:** Todo código novo ou modificado deve possuir testes correspondentes.
+- **Thresholds Obrigatórios:** Todo projeto com testes DEVE possuir limites mínimos de cobertura formalmente definidos no seu test runner (Vitest, Jest, etc.), com baseline global mínimo de **80%** (Linhas, Funções, Statements e Ramos).
+- **Hard Blocker:** Ausência de configuração de thresholds ou cobertura real abaixo do limite constitui um **bloqueio imediato (hard blocker)** para conclusão de tarefas, PRs ou commits.
+- **Ratcheting em Legados:** Em projetos com baixa cobertura preexistente, o threshold deve ser travado no valor atual para impedir regressões silenciosas e aumentado progressivamente a cada entrega.
+
+> Para guias detalhados e checklists de implementação, utilize as skills de engenharia em [`.agents/skills/engineering/SKILL.md`](.agents/skills/engineering/SKILL.md) e testes em [`.agents/skills/testing/SKILL.md`](.agents/skills/testing/SKILL.md).
 
 ---
 
-## 3. Fluxo de Trabalho PadrÃ£o do Agente
+## 3. Fluxo de Trabalho Padrão do Agente
 
-Para qualquer modificaÃ§Ã£o ou nova funcionalidade, siga o ciclo:
+Para qualquer modificação ou nova funcionalidade, siga o ciclo:
 
-1. **AnÃ¡lise e ContextualizaÃ§Ã£o:**
-   - Investigue o cÃ³digo existente antes de criar novas abstraÃ§Ãµes.
-   - Compreenda os requisitos e restriÃ§Ãµes tÃ©cnicas.
+1. **Análise e Contextualização:**
+   - Investigue o código existente antes de criar novas abstrações.
+   - Compreenda os requisitos e restrições técnicas.
 2. **Design e Arquitetura:**
-   - Escolha padrÃµes de design consolidados quando aplicÃ¡vel.
-   - Isole regras de negÃ³cio de detalhes de infraestrutura e bibliotecas externas.
-3. **ImplementaÃ§Ã£o Limpa:**
-   - Escreva cÃ³digo legÃ­vel, tipado e autoexplicativo.
-   - Mantenha comentÃ¡rios focados no "porquÃª", nunca no Ã³bvio "o que".
-4. **VerificaÃ§Ã£o e Testes:**
-   - Garanta testes automatizados (unitÃ¡rios, integraÃ§Ã£o) para novas funcionalidades ou correÃ§Ãµes de bugs.
-   - Verifique formataÃ§Ã£o e linters antes de concluir a entrega.
-5. **RevisÃ£o:**
+   - Escolha padrões de design consolidados quando aplicável.
+   - Isole regras de negócio de detalhes de infraestrutura e bibliotecas externas.
+3. **Implementação Limpa:**
+   - Escreva código legível, tipado e autoexplicativo.
+   - Mantenha comentários focados no "porquê", nunca no óbvio "o que".
+4. **Verificação, Testes e Guardrail de Cobertura:**
+   - Garanta testes automatizados (unitários, integração) para novas funcionalidades ou correções de bugs.
+   - Execute os testes com flag de cobertura (`--coverage`) e certifique-se de que os thresholds mínimos foram superados.
+   - Execute o script `.agents/scripts/verify-coverage-guardrail.ps1` quando aplicável.
+   - Verifique formatação e linters antes de concluir a entrega.
+5. **Revisão:**
    - Aplique o checklist de code review antes de finalizar o trabalho.
 
 ---

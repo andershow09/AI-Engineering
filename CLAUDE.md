@@ -19,7 +19,7 @@ O repositório possui pacotes de conhecimento especializado em `.agents/skills/`
 
 - **Engenharia e Clean Code:** Leia `.agents/skills/engineering/SKILL.md` (e referências em `references/`).
 - **Versionamento com Git:** Leia `.agents/skills/git/SKILL.md` (Conventional Commits, branching seguro).
-- **Testes Automatizados:** Leia `.agents/skills/testing/SKILL.md` (Pirâmide, F.I.R.S.T., AAA, mocks).
+- **Testes Automatizados:** Leia `.agents/skills/testing/SKILL.md` (Pirâmide, F.I.R.S.T., AAA, mocks e guardrail mandatório de thresholds de cobertura).
 - **Angular 22+:** Leia `.agents/skills/angular/SKILL.md` (Standalone, Signals, Zoneless, Control Flow).
 - **Ionic Framework & Capacitor:** Leia `.agents/skills/ionic/SKILL.md` (Stack navigation, plugins nativos, theming).
 - **Flutter & Dart:** Leia `.agents/skills/flutter/SKILL.md` (MVVM, Riverpod, BLoC, Material 3).
@@ -35,6 +35,9 @@ Sempre que alterar arquivos ou antes de finalizar tarefas de manutenção de ski
 # Validar integridade das skills e frontmatter YAML
 powershell -ExecutionPolicy Bypass -File .agents/scripts/validate-skills.ps1
 
+# Validar guardrail de cobertura de testes e thresholds
+powershell -ExecutionPolicy Bypass -File .agents/scripts/verify-coverage-guardrail.ps1 -ProjectPath .
+
 # Mapear arquitetura do projeto atual
 powershell -ExecutionPolicy Bypass -File .agents/scripts/repo-map.ps1
 ```
@@ -43,6 +46,7 @@ powershell -ExecutionPolicy Bypass -File .agents/scripts/repo-map.ps1
 
 ## 4. Convenções de Código e Commits
 
+- **Guardrail de Testes:** Todo projeto com testes DEVE possuir thresholds configurados no test runner (mínimo global de 80%). Cobertura abaixo do threshold ou ausência de configuração é um bloqueio imediato (hard blocker).
 - **Commits:** Siga estritamente o padrão **Conventional Commits**:
   - `feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`, `perf:`
 - **Segurança:** Nunca execute `git push --force` na branch `main`.

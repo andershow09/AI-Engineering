@@ -12,9 +12,11 @@ As diretrizes abaixo se aplicam a todas as interações do GitHub Copilot (Chat,
   - Evite comentários redundantes que apenas repetem o que o código faz. Escreva código autoexplicativo com nomenclatura expressiva.
   - Siga **DRY**, **KISS** e **YAGNI**.
 
-- **Testes Automatizados:**
+- **Testes Automatizados & Guardrail de Cobertura:**
   - Todo código novo deve ser projetado para ser testável.
   - Siga a estrutura **Arrange-Act-Assert (AAA)** e os princípios **F.I.R.S.T.**.
+  - **Thresholds Mandatórios:** Todo projeto com testes DEVE possuir thresholds formais configurados no seu test runner (mínimo global de 80%).
+  - Falta de thresholds ou cobertura abaixo do mínimo é um bloqueio mandatório. Sempre escreva testes cobrindo branches e serviços centrais.
 
 ---
 
