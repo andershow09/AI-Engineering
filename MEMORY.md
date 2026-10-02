@@ -35,3 +35,9 @@ Este arquivo armazena lições aprendidas, decisões arquiteturais (ADRs leves),
   1. **Sintaxe no Vitest:** Thresholds globais no Vitest devem ser declarados com propriedades diretas: `test.coverage.thresholds = { lines: 80, statements: 80, branches: 80, functions: 80 }`.
   2. **Guardrail Determinístico:** Criado `.agents/scripts/verify-coverage-guardrail.ps1` que detecta thresholds ausentes, alerta sobre a armadilha de `global:` no Vitest e valida o relatório de cobertura.
   3. **Quality Gate Bloqueante:** A ausência de thresholds ou cobertura abaixo do mínimo (80% padrão ou ratcheting legado) agora é um **hard blocker** registrado em `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md` e na skill `testing`.
+
+### [2026-09] Regra Estrita de Localização de Projetos (Separação de Workspace)
+- **Problema / Gotcha:** Criar subprojetos de desenvolvimento de software (apps, landing pages, repositórios de clientes/produtos) dentro do diretório `AI-Engineering`. O repositório `AI-Engineering` é estritamente reservado para governança de agentes, skills, hooks, workflows e automações de engenharia de IA.
+- **Regra Obrigatória:**
+  1. **NUNCA** criar projetos de software, bibliotecas ou produtos dentro da árvore de diretórios do `AI-Engineering`.
+  2. **SEMPRE** perguntar explicitamente ao usuário em qual diretório de destino o novo projeto deve ser criado antes de rodar qualquer scaffolding (`ng new`, `flutter create`, `create-next-app`, etc.).

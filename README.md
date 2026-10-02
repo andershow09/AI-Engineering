@@ -3,7 +3,7 @@
 > **Harness Universal de Engenharia de IA, Padrões de Arquitetura e Skills Modulares para Google Antigravity, Claude Code, GitHub Copilot, Cursor e Agentes Autônomos.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-7%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
+[![Skills](https://img.shields.io/badge/Skills-8%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
 [![Antigravity](https://img.shields.io/badge/AI-Antigravity-orange.svg)](#)
 [![Claude Code](https://img.shields.io/badge/AI-Claude%20Code-d97706.svg)](#)
 [![GitHub Copilot](https://img.shields.io/badge/AI-GitHub%20Copilot-blueviolet.svg)](#)
@@ -43,6 +43,7 @@ O repositório inclui pontes nativas (*bridges*) para as principais ferramentas 
 
 | Skill | Descrição | Principais Tópicos |
 | :--- | :--- | :--- |
+| [**`orchestrator`**](.agents/skills/orchestrator/SKILL.md) | Orquestração e Roteamento Inteligente | Decomposição de tarefas, Model Routing (Claude Opus para análise, Gemini Flash para execução), paralelismo de subagentes |
 | [**`engineering`**](.agents/skills/engineering/SKILL.md) | Princípios de Engenharia de Software | SOLID (SRP, OCP, LSP, ISP, DIP), Clean Code, DRY, KISS, YAGNI, Code Review Checklist |
 | [**`git`**](.agents/skills/git/SKILL.md) | Versionamento e Operações Seguras | Conventional Commits, Estratégias de Branching, Resolução de Conflitos, Reflog, Stash |
 | [**`testing`**](.agents/skills/testing/SKILL.md) | Estratégia de Testes Automatizados | Pirâmide de Testes, Princípios F.I.R.S.T., AAA (Arrange-Act-Assert), Mocking, E2E |
@@ -87,7 +88,7 @@ O repositório inclui scripts utilitários em PowerShell para automação do cic
 ## 🚀 Como Utilizar
 
 ### Opção 1: Uso Global (Recomendado para Máquina Local)
-Para disponibilizar todas as 7 skills em qualquer projeto aberto no Antigravity:
+Para disponibilizar todas as 8 skills em qualquer projeto aberto no Antigravity:
 ```powershell
 git clone https://github.com/andershow09/AI-Engineering.git
 cd AI-Engineering

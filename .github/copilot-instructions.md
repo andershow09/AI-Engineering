@@ -43,9 +43,20 @@ As diretrizes abaixo se aplicam a todas as interações do GitHub Copilot (Chat,
 
 ---
 
-## 3. Padrão de Commits
+## 3. Orquestração e Roteamento de Tarefas
+
+Para tarefas complexas, o repositório define um protocolo de orquestração em `.agents/skills/orchestrator/SKILL.md`:
+- **Tarefas de Análise** (arquitetura, code review, diagnóstico de bugs): Priorize modelos com raciocínio profundo (Claude Opus / `pro`).
+- **Tarefas de Execução** (geração de código, testes, refatoração): Priorize modelos rápidos e eficientes (Gemini Flash / `flash`).
+- Decomponha requisições complexas em subtarefas atômicas antes de iniciar a implementação.
+- Consulte os templates de decomposição em `.agents/skills/orchestrator/references/decomposition-patterns.md`.
+
+---
+
+## 4. Padrão de Commits
 
 Sempre sugira mensagens de commit no formato **Conventional Commits**:
 - `feat(escopo): descrição concisa`
 - `fix(escopo): correção de bug`
 - `refactor(escopo): melhoria interna sem alteração funcional`
+

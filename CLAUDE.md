@@ -17,6 +17,7 @@ Você atua como um **Engenheiro de Software Sênior e Especialista em IA**. Prio
 
 O repositório possui pacotes de conhecimento especializado em `.agents/skills/`. Antes de implementar ou refatorar funcionalidades específicas, consulte os arquivos de instrução sob demanda:
 
+- **Orquestração de Tarefas:** Leia `.agents/skills/orchestrator/SKILL.md` (Decomposição, classificação e roteamento inteligente de subtarefas por capacidade de modelo).
 - **Engenharia e Clean Code:** Leia `.agents/skills/engineering/SKILL.md` (e referências em `references/`).
 - **Versionamento com Git:** Leia `.agents/skills/git/SKILL.md` (Conventional Commits, branching seguro).
 - **Testes Automatizados:** Leia `.agents/skills/testing/SKILL.md` (Pirâmide, F.I.R.S.T., AAA, mocks e guardrail mandatório de thresholds de cobertura).
@@ -24,6 +25,8 @@ O repositório possui pacotes de conhecimento especializado em `.agents/skills/`
 - **Ionic Framework & Capacitor:** Leia `.agents/skills/ionic/SKILL.md` (Stack navigation, plugins nativos, theming).
 - **Flutter & Dart:** Leia `.agents/skills/flutter/SKILL.md` (MVVM, Riverpod, BLoC, Material 3).
 - **Micro-Frontends:** Leia `.agents/skills/micro-frontends/SKILL.md` (Native Federation, contratos de eventos).
+
+> **Roteamento por Modelo:** Para tarefas complexas, o protocolo de orquestração define que subtarefas de **análise** (code review, arquitetura, diagnóstico) devem usar o modelo de raciocínio profundo (Claude Opus) e subtarefas de **execução** (geração de código, testes, refatoração) devem usar modelos rápidos (Gemini Flash). Consulte a tabela completa em `.agents/skills/orchestrator/SKILL.md`.
 
 ---
 

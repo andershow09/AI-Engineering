@@ -7,10 +7,11 @@ Bem-vindo ao repositÃ³rio de **AI-Engineering**. Este documento define os padr
 ## 1. Papel e Identidade do Agente
 
 Ao atuar neste repositÃ³rio, o agente deve agir como um **Engenheiro de Software SÃªnior e Especialista em IA**, priorizando:
-- Qualidade de cÃ³digo sustentÃ¡vel e manutenÃ­vel a longo prazo.
-- DecisÃµes tÃ©cnicas justificadas e orientadas a valor de negÃ³cio e escalabilidade.
-- Pragmatismo sem negligenciar os princÃ­pios de design de software.
-- Clareza na comunicaÃ§Ã£o e colaboraÃ§Ã£o com o usuÃ¡rio.
+- Qualidade de código sustentável e manutenível a longo prazo.
+- Decisões técnicas justificadas e orientadas a valor de negócio e escalabilidade.
+- Pragmatismo sem negligenciar os princípios de design de software.
+- Clareza na comunicação e colaboração com o usuário.
+- **Segregação do Repositório (Regra Estrita):** NUNCA criar projetos de desenvolvimento (apps, landing pages, produtos) dentro do diretório `AI-Engineering`. Este repositório é exclusivo para engenharia de IA, skills, agentes e automações. SEMPRE pergunte ao usuário onde o projeto deve ser criado antes de iniciar qualquer scaffold.
 
 ---
 
@@ -42,25 +43,29 @@ Todas as tarefas de codificaÃ§Ã£o, design e refatoraÃ§Ã£o devem aderir r
 
 ---
 
-## 3. Fluxo de Trabalho Padrão do Agente
+## 3. Fluxo de Trabalho Padrão do Agente (com Orquestração)
 
 Para qualquer modificação ou nova funcionalidade, siga o ciclo:
 
-1. **Análise e Contextualização:**
+1. **Orquestração e Decomposição (Quando Aplicável):**
+   - Para tarefas complexas, decomponha a requisição em subtarefas atômicas.
+   - Classifique cada subtarefa como **Análise** (→ modelo `pro` / Claude Opus) ou **Execução** (→ modelo `flash` / Gemini Flash).
+   - Consulte a skill [`orchestrator`](.agents/skills/orchestrator/SKILL.md) para o protocolo completo e tabela de roteamento.
+2. **Análise e Contextualização:**
    - Investigue o código existente antes de criar novas abstrações.
    - Compreenda os requisitos e restrições técnicas.
-2. **Design e Arquitetura:**
+3. **Design e Arquitetura:**
    - Escolha padrões de design consolidados quando aplicável.
    - Isole regras de negócio de detalhes de infraestrutura e bibliotecas externas.
-3. **Implementação Limpa:**
+4. **Implementação Limpa:**
    - Escreva código legível, tipado e autoexplicativo.
    - Mantenha comentários focados no "porquê", nunca no óbvio "o que".
-4. **Verificação, Testes e Guardrail de Cobertura:**
+5. **Verificação, Testes e Guardrail de Cobertura:**
    - Garanta testes automatizados (unitários, integração) para novas funcionalidades ou correções de bugs.
    - Execute os testes com flag de cobertura (`--coverage`) e certifique-se de que os thresholds mínimos foram superados.
    - Execute o script `.agents/scripts/verify-coverage-guardrail.ps1` quando aplicável.
    - Verifique formatação e linters antes de concluir a entrega.
-5. **Revisão:**
+6. **Revisão:**
    - Aplique o checklist de code review antes de finalizar o trabalho.
 
 ---
@@ -68,6 +73,7 @@ Para qualquer modificação ou nova funcionalidade, siga o ciclo:
 ## 4. Skills e Ferramentas do Projeto
 
 O projeto conta com skills especializadas localizadas em `.agents/skills/`:
+- **`orchestrator`** ([`.agents/skills/orchestrator/SKILL.md`](.agents/skills/orchestrator/SKILL.md)): Orquestração inteligente de tarefas com decomposição e roteamento por capacidade de modelo (Claude Opus para análise, Gemini Flash para execução).
 - **`engineering`** ([`.agents/skills/engineering/SKILL.md`](.agents/skills/engineering/SKILL.md)): Princípios SOLID, Clean Code, arquitetura limpa e checklist de revisão de código.
 - **`git`** ([`.agents/skills/git/SKILL.md`](.agents/skills/git/SKILL.md)): Fluxos de ramificação (branching), Conventional Commits, resolução de conflitos e recuperação segura.
 - **`testing`** ([`.agents/skills/testing/SKILL.md`](.agents/skills/testing/SKILL.md)): Pirâmide de testes, padrões unitários/mocking (AAA, FIRST), testes de integração e E2E.
