@@ -1,4 +1,4 @@
-# AGENTS.md - Diretrizes de Desenvolvimento e Comportamento dos Agentes
+﻿# AGENTS.md - Diretrizes de Desenvolvimento e Comportamento dos Agentes
 
 Bem-vindo ao repositÃ³rio de **AI-Engineering**. Este documento define os padrÃµes fundamentais, regras de conduta, boas prÃ¡ticas arquiteturais e diretrizes de engenharia que todos os agentes de IA e desenvolvedores devem seguir neste ambiente.
 
@@ -40,6 +40,12 @@ Todas as tarefas de codificaÃ§Ã£o, design e refatoraÃ§Ã£o devem aderir r
 - **Ratcheting em Legados:** Em projetos com baixa cobertura preexistente, o threshold deve ser travado no valor atual para impedir regressões silenciosas e aumentado progressivamente a cada entrega.
 
 > Para guias detalhados e checklists de implementação, utilize as skills de engenharia em [`.agents/skills/engineering/SKILL.md`](.agents/skills/engineering/SKILL.md) e testes em [`.agents/skills/testing/SKILL.md`](.agents/skills/testing/SKILL.md).
+
+### 2.4. Guardrail MandatÃ³rio de CentralizaÃ§Ã£o de Literais e Cores (Zero Hardwords & Zero Magic Colors)
+- **Zero Hardwords:** Ã‰ terminantemente proibido chumbar textos de interface, mensagens de erro, feedbacks, tÃ­tulos, rÃ³tulos de botÃµes ou placeholders diretamente no meio de componentes, pÃ¡ginas, controllers ou templates. Todo e qualquer literal textual DEVE ser centralizado em arquivos/classes globais de constantes ou mÃ³dulos de localizaÃ§Ã£o/internacionalizaÃ§Ã£o (ex: AppStrings, AppConstants, l10n, constants.ts, messages.json).
+- **Zero Magic Colors:** Ã‰ terminantemente proibido instanciar ou declarar cores arbitrÃ¡rias diretamente no corpo de widgets, templates ou arquivos de estilo locais (ex: Color(0xFF...), Colors.red, hexadecimais no CSS/SCSS sem token). Toda e qualquer cor DEVE provir do Design System e temas centrais da aplicaÃ§Ã£o (ex: AppTheme, AppColors, tokens CSS :root, ColorScheme, ThemeExtension).
+- **Hard Blocker:** A presenÃ§a de hardwords ou cores mÃ¡gicas soltas constitui um **bloqueio imediato (hard blocker)** em code review e conclusÃ£o de tarefas.
+- **PropÃ³sito:** Garante manutenibilidade imediata, redesign desacoplado, suporte nativo Ã  internacionalizaÃ§Ã£o (i18n) e testes automatizados robustos baseados em contratos de constantes estÃ¡veis.
 
 ---
 

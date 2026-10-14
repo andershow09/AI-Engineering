@@ -71,6 +71,10 @@ flowchart TD
 4. **Injeção de Dependências:** O ViewModel recebe seus Repositories via injeção de dependência (via `ref` do Riverpod ou `get_it`/`RepositoryProvider` no BLoC).
 5. **Roteamento Declarativo:** Utilize `GoRouter` para gerenciar rotas de forma previsível, com suporte a *deep links*, parâmetros tipados e redirecionamentos de autenticação (*guards*).
 6. **Performance de Renderização:** Sempre que possível, utilize construtores `const`, evite recriar instâncias anônimas em loops e use `ListView.builder` para coleções dinâmicas.
+7. **Guardrail de Literais e Cores Centralizadas:**
+   - **Zero Hardwords:** Todas as strings de UI, labels de botÃµes, mensagens de erro e feedback devem residir em classes globais de constantes (ex: AppStrings, AppConstants) ou arquivos l10n/intl. Proibido literais soltos em widgets.
+   - **Zero Magic Colors:** Ã‰ proibido instanciar Color(0xFF...) ou utilizar Colors.* arbitrariamente no corpo de widgets. Todas as cores devem provir de AppTheme, AppColors, Theme.of(context).colorScheme ou ThemeExtension.
+
 
 ---
 

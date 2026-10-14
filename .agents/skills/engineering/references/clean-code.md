@@ -1,4 +1,4 @@
-# Clean Code: Guia de Práticas e Padrões de Código Limpo
+﻿# Clean Code: Guia de Práticas e Padrões de Código Limpo
 
 O código limpo é simples, direto, legível como uma prosa bem escrita e fácil de manter. Deve expressar a intenção do desenvolvedor sem ambiguidades.
 
@@ -68,3 +68,15 @@ O código limpo é simples, direto, legível como uma prosa bem escrita e fácil
 - **KISS (Keep It Simple, Stupid):** A simplicidade sempre deve ser o objetivo principal. Evite superengenharia e abstrações desnecessárias.
 - **YAGNI (You Aren't Gonna Need It):** Implemente o que é necessário agora, não o que você imagina que poderá precisar no futuro distante.
 - **Boy Scout Rule:** "Deixe a área do acampamento mais limpa do que você a encontrou." A cada toque em um arquivo, melhore pequenos detalhes de formatação, nomenclatura ou organização.
+
+---
+
+## 6. CentralizaÃ§Ã£o de Literais e Cores (Zero Hardwords & Zero Magic Colors)
+
+- **EliminaÃ§Ã£o Total de Hardwords:**
+  - Nenhuma string visÃ­vel de interface (tÃ­tulos, botÃµes, labels, mensagens de feedback/erro, placeholders) deve ser declarada como literal diretamente em componentes ou views.
+  - Centralize em arquivos de constantes tipadas globais (ex: AppStrings, AppConstants, constants.ts, messages.json) ou mÃ³dulos de internacionalizaÃ§Ã£o/localizaÃ§Ã£o (l10n, i18n).
+  - *Vantagens:* AlteraÃ§Ãµes de cÃ³pia instantÃ¢neas sem risco de quebrar telas, facilidade de traduÃ§Ã£o e testes de UI seguros contra digitaÃ§Ã£o incorreta.
+- **EliminaÃ§Ã£o Total de Cores MÃ¡gicas (Zero Magic Colors):**
+  - Nunca declare valores hexadecimais soltos (#123456), funÃ§Ãµes de cor instantÃ¢neas (Color(0xFF...)) ou cores de sistema genÃ©ricas fora do Design System.
+  - Utilize tokens centralizados de tema (ex: AppTheme, AppColors, variÃ¡veis CSS globais :root, ColorScheme).
