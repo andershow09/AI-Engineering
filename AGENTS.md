@@ -1,4 +1,4 @@
-﻿# AGENTS.md - Diretrizes de Desenvolvimento e Comportamento dos Agentes
+# AGENTS.md - Diretrizes de Desenvolvimento e Comportamento dos Agentes
 
 Bem-vindo ao repositÃ³rio de **AI-Engineering**. Este documento define os padrÃµes fundamentais, regras de conduta, boas prÃ¡ticas arquiteturais e diretrizes de engenharia que todos os agentes de IA e desenvolvedores devem seguir neste ambiente.
 
@@ -87,6 +87,10 @@ O projeto conta com skills especializadas localizadas em `.agents/skills/`:
 - **`ionic`** ([`.agents/skills/ionic/SKILL.md`](.agents/skills/ionic/SKILL.md)): Desenvolvimento multiplataforma e mobile com Ionic Framework, Capacitor, navegação em stack, UI e APIs de hardware.
 - **`angular`** ([`.agents/skills/angular/SKILL.md`](.agents/skills/angular/SKILL.md)): Desenvolvimento web corporativo com Angular 22+, Standalone, Signals, Zoneless, Control Flow e NgRx SignalStore.
 - **`micro-frontends`** ([`.agents/skills/micro-frontends/SKILL.md`](.agents/skills/micro-frontends/SKILL.md)): Arquitetura MFE, Native Federation (esbuild), Shell vs Remotes, contratos desacoplados, segurança e tolerância a falhas.
+- **`nestjs`** ([`.agents/skills/nestjs/SKILL.md`](.agents/skills/nestjs/SKILL.md)): Desenvolvimento backend corporativo com NestJS (Node.js), Clean Architecture (DDD/Ports & Adapters), injeção de dependências estrita (IoC), escalabilidade (Fastify, BullMQ/Redis), resiliência (RFC 7807) e testes com Vitest/Jest.
+
+- **Agentes Especialistas:** Localizados em `.agents/agents/`:
+  - **`nestjs-expert`** ([`.agents/agents/nestjs-expert.md`](.agents/agents/nestjs-expert.md)): Arquiteto e engenheiro backend sênior especialista em ecossistema NestJS, Clean Architecture, SOLID e microsserviços escaláveis.
 
 - **Automações e Scripts:** Localizados em `.agents/scripts/`:
   - `validate-skills.ps1`: Validação determinística de conformidade das skills.

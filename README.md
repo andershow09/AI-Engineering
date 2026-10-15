@@ -3,7 +3,7 @@
 > **Harness Universal de Engenharia de IA, Padrões de Arquitetura e Skills Modulares para Google Antigravity, Claude Code, GitHub Copilot, Cursor e Agentes Autônomos.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-8%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
+[![Skills](https://img.shields.io/badge/Skills-9%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
 [![Antigravity](https://img.shields.io/badge/AI-Antigravity-orange.svg)](#)
 [![Claude Code](https://img.shields.io/badge/AI-Claude%20Code-d97706.svg)](#)
 [![GitHub Copilot](https://img.shields.io/badge/AI-GitHub%20Copilot-blueviolet.svg)](#)
@@ -18,10 +18,11 @@ O repositório **AI-Engineering** é um ecossistema completo que eleva o uso de 
 Projetado para operar de forma **Multi-LLM e agnóstica**, ele provê:
 1. **Regras e Comportamentos Estritos (`AGENTS.md` / `CLAUDE.md` / Copilot):** Garante que o modelo aja como Engenheiro de Software Sênior.
 2. **Skills Especializadas sob Demanda (`.agents/skills/`):** Divulgação progressiva (*Progressive Disclosure*) que poupa contexto e tokens.
-3. **Automações e Quality Gates Determinísticos (`.agents/scripts/`):** Scripts para validação de integridade, mapeamento e sincronização.
-4. **Lifecycle Hooks e Git Pre-Commit (`.githooks/` e `hooks.json`):** Interceptação para validação antes que alterações sejam commitadas por qualquer IA ou humano.
-5. **Memória Contínua (`MEMORY.md`):** Registro de armadilhas conhecidas (*gotchas*) e decisões de arquitetura.
-6. **Blueprint Arquitetural (`ARCHITECTURE.md`):** Padrões consolidados para Web (Angular 22+), Mobile Híbrido (Ionic/Capacitor), Nativo (Flutter) e Distribuído (Micro-frontends).
+3. **Agentes Especialistas Declarativos (`.agents/agents/`):** Perfis de agentes arquitetos e especialistas focados em stacks específicas (ex: `nestjs-expert`).
+4. **Automações e Quality Gates Determinísticos (`.agents/scripts/`):** Scripts para validação de integridade, mapeamento e sincronização.
+5. **Lifecycle Hooks e Git Pre-Commit (`.githooks/` e `hooks.json`):** Interceptação para validação antes que alterações sejam commitadas por qualquer IA ou humano.
+6. **Memória Contínua (`MEMORY.md`):** Registro de armadilhas conhecidas (*gotchas*) e decisões de arquitetura.
+7. **Blueprint Arquitetural (`ARCHITECTURE.md`):** Padrões consolidados para Web (Angular 22+), Mobile Híbrido (Ionic/Capacitor), Nativo (Flutter), Backend (NestJS) e Distribuído (Micro-frontends).
 
 ---
 
@@ -51,6 +52,7 @@ O repositório inclui pontes nativas (*bridges*) para as principais ferramentas 
 | [**`ionic`**](.agents/skills/ionic/SKILL.md) | Mobile Multiplataforma Híbrido | Ionic Framework, Capacitor, Shadow DOM, Theming, Stack Navigation, Lifecycle Events |
 | [**`flutter`**](.agents/skills/flutter/SKILL.md) | Mobile Multiplataforma Nativo | Dart, MVVM, Gerenciamento com Riverpod (AsyncNotifier) e BLoC/Cubit, Material 3 |
 | [**`micro-frontends`**](.agents/skills/micro-frontends/SKILL.md) | Arquiteturas Frontend Distribuídas | Native Federation (esbuild), Shell vs Remotes, Contratos de Eventos, Error Boundaries |
+| [**`nestjs`**](.agents/skills/nestjs/SKILL.md) | Backend Corporativo & Microsserviços | Clean Architecture (DDD/Ports & Adapters), Injeção de Dependências com Abstract Classes, Fastify, BullMQ/Redis, RFC 7807, Cobertura >= 80% |
 
 ---
 
@@ -88,7 +90,7 @@ O repositório inclui scripts utilitários em PowerShell para automação do cic
 ## 🚀 Como Utilizar
 
 ### Opção 1: Uso Global (Recomendado para Máquina Local)
-Para disponibilizar todas as 8 skills em qualquer projeto aberto no Antigravity:
+Para disponibilizar todas as 9 skills e agentes especialistas em qualquer projeto aberto no Antigravity:
 ```powershell
 git clone https://github.com/andershow09/AI-Engineering.git
 cd AI-Engineering

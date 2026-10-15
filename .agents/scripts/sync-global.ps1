@@ -30,5 +30,16 @@ if (Test-Path $LocalAgentsMd) {
     Copy-Item -Path $LocalAgentsMd -Destination (Join-Path $TargetDir "AGENTS.md") -Force
 }
 
+# 4. Copiar agentes especialistas
+$LocalAgentsDir = Join-Path $RepoRoot ".agents\agents"
+$GlobalAgentsDir = Join-Path $TargetDir "agents"
+if (Test-Path $LocalAgentsDir) {
+    if (-not (Test-Path $GlobalAgentsDir)) {
+        New-Item -ItemType Directory -Force -Path $GlobalAgentsDir | Out-Null
+    }
+    Write-Host "Copiando agentes especialistas para $GlobalAgentsDir..." -ForegroundColor Yellow
+    Copy-Item -Path (Join-Path $LocalAgentsDir "*") -Destination $GlobalAgentsDir -Recurse -Force
+}
+
 Write-Host "`n[SUCESSO] Sincronizacao global concluida com sucesso!" -ForegroundColor Green
-Write-Host "As 7 skills e as diretrizes de AGENTS.md agora estao disponiveis em qualquer projeto do Antigravity." -ForegroundColor White
+Write-Host "As 9 skills, agentes especialistas e as diretrizes de AGENTS.md agora estao disponiveis em qualquer projeto do Antigravity." -ForegroundColor White

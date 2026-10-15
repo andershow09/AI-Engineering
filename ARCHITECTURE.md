@@ -22,10 +22,12 @@ flowchart TD
         ENG["engineering (SOLID & Clean Code)"]
         GIT["git (Branching & Conventional Commits)"]
         TST["testing (Pirâmide & F.I.R.S.T.)"]
+        ORC["orchestrator (Model Routing & Task Decomposition)"]
         ANG["angular (v22+, Signals & Zoneless)"]
         ION["ionic (Capacitor & Multiplataforma)"]
         FLU["flutter (MVVM & Riverpod/BLoC)"]
         MFE["micro-frontends (Native Federation)"]
+        NEST["nestjs (Clean Architecture & DI)"]
     end
 
     Harness --> Skills
@@ -54,6 +56,12 @@ flowchart TD
 - **Paradigma:** Native Federation com esbuild.
 - **Shell vs Remotes:** Shell orquestra autenticação e layout principal; Remotes expõem recursos desacoplados.
 - **Comunicação:** Custom Events isolados, contratos TypeScript compartilhados e tolerância a falhas (Fallbacks/Error Boundaries).
+
+### 2.5. Backend Corporativo & Microsserviços (NestJS & Node.js)
+- **Paradigma:** Clean Architecture / Hexagonal (Ports & Adapters) segregando Domain (puro), Application (Use Cases), Infrastructure (Prisma/TypeORM/Redis) e Presentation (REST/GraphQL/gRPC).
+- **Inversão de Dependências:** Contratos abstratos (`abstract class`) como tokens de injeção, desacoplando Use Cases de bancos e serviços externos.
+- **Escalabilidade & Performance:** Fastify Engine para alto throughput de I/O, processamento assíncrono em segundo plano com BullMQ e Redis, e Cache-Aside distribuído.
+- **Qualidade & Resiliência:** DTOs com `class-validator` estrito, tratamento RFC 7807 Problem Details, configuração fail-fast com Zod, e guardrail de cobertura >= 80%.
 
 ---
 

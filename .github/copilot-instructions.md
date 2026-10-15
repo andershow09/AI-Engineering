@@ -41,6 +41,13 @@ As diretrizes abaixo se aplicam a todas as interações do GitHub Copilot (Chat,
   - Utilize **Native Federation** com esbuild.
   - Mantenha comunicação desacoplada via CustomEvents tipados ou Event Bus compartilhado.
 
+- **NestJS (Node.js):**
+  - Siga a **Clean Architecture / Hexagonal** com estrita separação entre Domain, Application, Infrastructure e Presentation.
+  - Utilize **Classes Abstratas** como portas e tokens de injeção de dependência para desacoplar Use Cases de ORMs e serviços externos.
+  - Valide entradas usando `ValidationPipe` com `whitelist: true` e DTOs com `class-validator`.
+  - Adote Fastify adapter para alto throughput e filas BullMQ/Redis para tarefas assíncronas.
+  - Garanta que testes unitários e de integração atinjam o mínimo de 80% de cobertura.
+
 ---
 
 ## 3. Orquestração e Roteamento de Tarefas
