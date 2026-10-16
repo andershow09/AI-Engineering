@@ -42,4 +42,4 @@ if (Test-Path $LocalAgentsDir) {
 }
 
 Write-Host "`n[SUCESSO] Sincronizacao global concluida com sucesso!" -ForegroundColor Green
-Write-Host "As 9 skills, agentes especialistas e as diretrizes de AGENTS.md agora estao disponiveis em qualquer projeto do Antigravity." -ForegroundColor White
+Write-Host "As 10 skills, agentes especialistas e as diretrizes de AGENTS.md agora estao disponiveis em qualquer projeto do Antigravity." -ForegroundColor White

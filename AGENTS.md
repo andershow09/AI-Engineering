@@ -88,8 +88,10 @@ O projeto conta com skills especializadas localizadas em `.agents/skills/`:
 - **`angular`** ([`.agents/skills/angular/SKILL.md`](.agents/skills/angular/SKILL.md)): Desenvolvimento web corporativo com Angular 22+, Standalone, Signals, Zoneless, Control Flow e NgRx SignalStore.
 - **`micro-frontends`** ([`.agents/skills/micro-frontends/SKILL.md`](.agents/skills/micro-frontends/SKILL.md)): Arquitetura MFE, Native Federation (esbuild), Shell vs Remotes, contratos desacoplados, segurança e tolerância a falhas.
 - **`nestjs`** ([`.agents/skills/nestjs/SKILL.md`](.agents/skills/nestjs/SKILL.md)): Desenvolvimento backend corporativo com NestJS (Node.js), Clean Architecture (DDD/Ports & Adapters), injeção de dependências estrita (IoC), escalabilidade (Fastify, BullMQ/Redis), resiliência (RFC 7807) e testes com Vitest/Jest.
+- **`spec-driven`** ([`.agents/skills/spec-driven/SKILL.md`](.agents/skills/spec-driven/SKILL.md)): Metodologia de Desenvolvimento Orientado por Especificação (SDD), constituição de engenharia, tríade de artefatos (spec.md, plan.md, tasks.md), detecção de [NEEDS CLARIFICATION] e grafos de tarefas com paralelismo [P].
 
 - **Agentes Especialistas:** Localizados em `.agents/agents/`:
+  - **`spec-driven-expert`** ([`.agents/agents/spec-driven-expert.md`](.agents/agents/spec-driven-expert.md)): Arquiteto e engenheiro de produto especialista em Spec-Driven Development (SDD), constituições de projeto, modelagem formal de requisitos e rastreabilidade de complexidade.
   - **`nestjs-expert`** ([`.agents/agents/nestjs-expert.md`](.agents/agents/nestjs-expert.md)): Arquiteto e engenheiro backend sênior especialista em ecossistema NestJS, Clean Architecture, SOLID e microsserviços escaláveis.
   - **`flutter-expert`** ([`.agents/agents/flutter-expert.md`](.agents/agents/flutter-expert.md)): Arquiteto e engenheiro mobile/web sênior especialista em Flutter, Clean Architecture, Riverpod, Firebase (FCM, Cloud Functions, Security Rules), resiliência offline e cobertura >= 80%.
 

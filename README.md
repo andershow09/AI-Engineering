@@ -3,7 +3,7 @@
 > **Harness Universal de Engenharia de IA, Padrões de Arquitetura e Skills Modulares para Google Antigravity, Claude Code, GitHub Copilot, OpenAI Codex, Cursor e Agentes Autônomos.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-9%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
+[![Skills](https://img.shields.io/badge/Skills-10%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
 [![Antigravity](https://img.shields.io/badge/AI-Antigravity-orange.svg)](#)
 [![Claude Code](https://img.shields.io/badge/AI-Claude%20Code-d97706.svg)](#)
 [![GitHub Copilot](https://img.shields.io/badge/AI-GitHub%20Copilot-blueviolet.svg)](#)
@@ -19,11 +19,11 @@ O repositório **AI-Engineering** é um ecossistema completo que eleva o uso de 
 Projetado para operar de forma **Multi-LLM e agnóstica**, ele provê:
 1. **Regras e Comportamentos Estritos (`AGENTS.md` / `CLAUDE.md` / `CODEX.md` / Copilot):** Garante que o modelo aja como Engenheiro de Software Sênior.
 2. **Skills Especializadas sob Demanda (`.agents/skills/`):** Divulgação progressiva (*Progressive Disclosure*) que poupa contexto e tokens.
-3. **Agentes Especialistas Declarativos (`.agents/agents/`):** Perfis de agentes arquitetos e especialistas focados em stacks específicas (ex: `nestjs-expert`).
+3. **Agentes Especialistas Declarativos (`.agents/agents/`):** Perfis de agentes arquitetos e especialistas focados em stacks específicas (ex: `spec-driven-expert`, `nestjs-expert`, `flutter-expert`).
 4. **Automações e Quality Gates Determinísticos (`.agents/scripts/`):** Scripts para validação de integridade, mapeamento e sincronização.
 5. **Lifecycle Hooks e Git Pre-Commit (`.githooks/` e `hooks.json`):** Interceptação para validação antes que alterações sejam commitadas por qualquer IA ou humano.
 6. **Memória Contínua (`MEMORY.md`):** Registro de armadilhas conhecidas (*gotchas*) e decisões de arquitetura.
-7. **Blueprint Arquitetural (`ARCHITECTURE.md`):** Padrões consolidados para Web (Angular 22+), Mobile Híbrido (Ionic/Capacitor), Nativo (Flutter), Backend (NestJS) e Distribuído (Micro-frontends).
+7. **Blueprint Arquitetural (`ARCHITECTURE.md`):** Padrões consolidados para Web (Angular 22+), Mobile Híbrido (Ionic/Capacitor), Nativo (Flutter), Backend (NestJS), Requisitos Formais (Spec-Driven Development) e Distribuído (Micro-frontends).
 
 ---
 
@@ -46,6 +46,7 @@ O repositório inclui pontes nativas (*bridges*) para as principais ferramentas 
 
 | Skill | Descrição | Principais Tópicos |
 | :--- | :--- | :--- |
+| [**`spec-driven`**](.agents/skills/spec-driven/SKILL.md) | Engenharia Guiada por Especificação (SDD) | Constituição de engenharia, tríade spec.md/plan.md/tasks.md, [NEEDS CLARIFICATION], precedência normativa e grafos de execução [P] |
 | [**`orchestrator`**](.agents/skills/orchestrator/SKILL.md) | Orquestração e Roteamento Inteligente | Decomposição de tarefas, Model Routing (Claude Opus para análise, Gemini Flash para execução), paralelismo de subagentes |
 | [**`engineering`**](.agents/skills/engineering/SKILL.md) | Princípios de Engenharia de Software | SOLID (SRP, OCP, LSP, ISP, DIP), Clean Code, DRY, KISS, YAGNI, Code Review Checklist |
 | [**`git`**](.agents/skills/git/SKILL.md) | Versionamento e Operações Seguras | Conventional Commits, Estratégias de Branching, Resolução de Conflitos, Reflog, Stash |
@@ -92,7 +93,7 @@ O repositório inclui scripts utilitários em PowerShell para automação do cic
 ## 🚀 Como Utilizar
 
 ### Opção 1: Uso Global (Recomendado para Máquina Local)
-Para disponibilizar todas as 9 skills e agentes especialistas em qualquer projeto aberto no Antigravity:
+Para disponibilizar todas as 10 skills e agentes especialistas em qualquer projeto aberto no Antigravity:
 ```powershell
 git clone https://github.com/andershow09/AI-Engineering.git
 cd AI-Engineering

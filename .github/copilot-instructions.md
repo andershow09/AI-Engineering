@@ -46,7 +46,10 @@ As diretrizes abaixo se aplicam a todas as interações do GitHub Copilot (Chat,
   - Utilize **Classes Abstratas** como portas e tokens de injeção de dependência para desacoplar Use Cases de ORMs e serviços externos.
   - Valide entradas usando `ValidationPipe` com `whitelist: true` e DTOs com `class-validator`.
   - Adote Fastify adapter para alto throughput e filas BullMQ/Redis para tarefas assíncronas.
-  - Garanta que testes unitários e de integração atinjam o mínimo de 80% de cobertura.
+- **Spec-Driven Development (SDD):**
+  - Toda nova funcionalidade deve ser precedida pela tríade `spec.md` (o quê/por quê), `plan.md` (como) e `tasks.md` (ordem e paralelismo [P]).
+  - Nunca assuma regras de negócio duvidosas; sinalize explicitamente com `[NEEDS CLARIFICATION: ...]`.
+  - Respeite a precedência da constituição do projeto (`.specify/memory/constitution.md`) sobre preferências de código.
 
 ---
 

@@ -27,6 +27,7 @@ O repositório possui módulos de conhecimento especializado localizados em `.ag
 - **Ionic Framework & Capacitor:** Leia `.agents/skills/ionic/SKILL.md` (Stack navigation, plugins nativos, theming).
 - **Flutter & Dart:** Leia `.agents/skills/flutter/SKILL.md` (MVVM, Riverpod, BLoC, Material 3).
 - **Micro-Frontends:** Leia `.agents/skills/micro-frontends/SKILL.md` (Native Federation, contratos de eventos desacoplados).
+- **Spec-Driven Development (SDD):** Leia `.agents/skills/spec-driven/SKILL.md` (Constituição de engenharia, tríade spec.md/plan.md/tasks.md, [NEEDS CLARIFICATION], precedência de contratos e paralelismo [P]). Agente especialista: `.agents/agents/spec-driven-expert.md`.
 
 ---
 
