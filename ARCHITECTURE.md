@@ -51,6 +51,7 @@ flowchart TD
 - **Paradigma:** MVVM (Model-View-ViewModel).
 - **Gerenciamento de Estado:** Riverpod (padrão principal) com `AsyncNotifier` ou BLoC/Cubit para fluxos de negócio complexos.
 - **Design:** Material 3 declarativo e responsivo.
+  - **Agente Especialista Responsável:** [`flutter-expert`](.agents/agents/flutter-expert.md) para design, implementação de push notifications, resiliência offline, regras Firestore e guardrails de qualidade.
 
 ### 2.4. Arquitetura Distribuída (Micro-Frontends)
 - **Paradigma:** Native Federation com esbuild.

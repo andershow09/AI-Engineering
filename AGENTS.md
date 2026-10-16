@@ -91,6 +91,7 @@ O projeto conta com skills especializadas localizadas em `.agents/skills/`:
 
 - **Agentes Especialistas:** Localizados em `.agents/agents/`:
   - **`nestjs-expert`** ([`.agents/agents/nestjs-expert.md`](.agents/agents/nestjs-expert.md)): Arquiteto e engenheiro backend sênior especialista em ecossistema NestJS, Clean Architecture, SOLID e microsserviços escaláveis.
+  - **`flutter-expert`** ([`.agents/agents/flutter-expert.md`](.agents/agents/flutter-expert.md)): Arquiteto e engenheiro mobile/web sênior especialista em Flutter, Clean Architecture, Riverpod, Firebase (FCM, Cloud Functions, Security Rules), resiliência offline e cobertura >= 80%.
 
 - **Automações e Scripts:** Localizados em `.agents/scripts/`:
   - `validate-skills.ps1`: Validação determinística de conformidade das skills.

@@ -1,12 +1,13 @@
 # 🧠 AI-Engineering Harness & Customizations
 
-> **Harness Universal de Engenharia de IA, Padrões de Arquitetura e Skills Modulares para Google Antigravity, Claude Code, GitHub Copilot, Cursor e Agentes Autônomos.**
+> **Harness Universal de Engenharia de IA, Padrões de Arquitetura e Skills Modulares para Google Antigravity, Claude Code, GitHub Copilot, OpenAI Codex, Cursor e Agentes Autônomos.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills](https://img.shields.io/badge/Skills-9%20Modular%20Packs-brightgreen.svg)](#-catálogo-de-skills)
 [![Antigravity](https://img.shields.io/badge/AI-Antigravity-orange.svg)](#)
 [![Claude Code](https://img.shields.io/badge/AI-Claude%20Code-d97706.svg)](#)
 [![GitHub Copilot](https://img.shields.io/badge/AI-GitHub%20Copilot-blueviolet.svg)](#)
+[![OpenAI Codex](https://img.shields.io/badge/AI-OpenAI%20Codex-412991.svg)](#)
 [![Cursor](https://img.shields.io/badge/AI-Cursor-black.svg)](#)
 
 ---
@@ -16,7 +17,7 @@
 O repositório **AI-Engineering** é um ecossistema completo que eleva o uso de agentes autônomos de IA de simples *prompting* para um **Harness de Engenharia de IA** (*Agent Harness*). 
 
 Projetado para operar de forma **Multi-LLM e agnóstica**, ele provê:
-1. **Regras e Comportamentos Estritos (`AGENTS.md` / `CLAUDE.md` / Copilot):** Garante que o modelo aja como Engenheiro de Software Sênior.
+1. **Regras e Comportamentos Estritos (`AGENTS.md` / `CLAUDE.md` / `CODEX.md` / Copilot):** Garante que o modelo aja como Engenheiro de Software Sênior.
 2. **Skills Especializadas sob Demanda (`.agents/skills/`):** Divulgação progressiva (*Progressive Disclosure*) que poupa contexto e tokens.
 3. **Agentes Especialistas Declarativos (`.agents/agents/`):** Perfis de agentes arquitetos e especialistas focados em stacks específicas (ex: `nestjs-expert`).
 4. **Automações e Quality Gates Determinísticos (`.agents/scripts/`):** Scripts para validação de integridade, mapeamento e sincronização.
@@ -34,7 +35,8 @@ O repositório inclui pontes nativas (*bridges*) para as principais ferramentas 
 | :--- | :--- | :--- |
 | **Google Antigravity** | [`AGENTS.md`](AGENTS.md) & `.agents/skills/` | Leitura hierárquica e ativação progressiva de skills |
 | **Claude Code** (Anthropic CLI) | [`CLAUDE.md`](CLAUDE.md) | Carregamento na inicialização e navegação sob demanda |
-| **GitHub Copilot** | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Injeção de contexto no Chat e inline completions |
+| **GitHub Copilot** | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Injeção de contexto no Chat e inline completions (motor Codex) |
+| **OpenAI Codex / ChatGPT** | [`CODEX.md`](CODEX.md) & [`AGENTS.md`](AGENTS.md) | Injeção de contexto operacional e diretrizes de engenharia |
 | **Cursor** | [`AGENTS.md`](AGENTS.md) | Suporte nativo ao padrão AGENTS.md na raiz do workspace |
 | **Windsurf / Aider** | [`AGENTS.md`](AGENTS.md) | Referência direta de convenções de projeto |
 
