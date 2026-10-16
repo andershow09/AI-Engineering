@@ -1,4 +1,4 @@
-﻿---
+---
 name: angular
 description: >-
   Diretrizes, padrões e boas práticas para desenvolvimento de aplicações web modernas com Angular 22+.
@@ -199,5 +199,5 @@ export const UserStore = signalStore(
 
 ## Guardrail de Literais e Cores Globais no Angular
 
-1. **Zero Hardwords:** Strings de interface, tÃ­tulos, placeholders e mensagens de validaÃ§Ã£o/erro devem ser centralizadas em arquivos de constantes tipadas (ex: src/app/core/constants/app-strings.ts) ou dicionÃ¡rios de traduÃ§Ã£o ($localize, @ngx-translate). Proibido literais em templates .html ou componentes.
-2. **Zero Magic Colors:** Cores devem ser consumidas exclusivamente via Design Tokens e CSS Custom Properties globais (ex: ar(--color-primary), ar(--color-surface) declaradas em src/styles/_tokens.scss ou :root). Ã‰ proibido usar valores hexadecimais ou RGB dispersos em arquivos .scss/.css de componentes.
+1. **Zero Hardwords:** Strings de interface, títulos, placeholders e mensagens de validação/erro devem ser centralizadas em arquivos de constantes tipadas (ex: src/app/core/constants/app-strings.ts) ou dicionários de tradução ($localize, @ngx-translate). Proibido literais em templates .html ou componentes.
+2. **Zero Magic Colors:** Cores devem ser consumidas exclusivamente via Design Tokens e CSS Custom Properties globais (ex: ar(--color-primary), ar(--color-surface) declaradas em src/styles/_tokens.scss ou :root). É proibido usar valores hexadecimais ou RGB dispersos em arquivos .scss/.css de componentes.

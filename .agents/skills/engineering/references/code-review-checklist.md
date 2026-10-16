@@ -1,4 +1,4 @@
-﻿# Checklist de Code Review: SOLID & Clean Code
+# Checklist de Code Review: SOLID & Clean Code
 
 Utilize este checklist como guia de verificação antes de submeter, aprovar ou finalizar qualquer alteração de código.
 
@@ -26,9 +26,9 @@ Utilize este checklist como guia de verificação antes de submeter, aprovar ou 
 - [ ] **Tratamento de Erros:** Exceções fornecem mensagem contextual clara e tratam falhas graciosamente?
 - [ ] **Nulidade:** O código evita retornos `null`/`undefined` soltos e lida com ausência de valores de forma segura?
 - [ ] **Comentários:** Não há código comentado ou comentários redundantes; apenas justificativas arquiteturais essenciais?
-- [ ] **Simplicidade:** O cÃ³digo evita superengenharia (YAGNI/KISS)?
-- [ ] **Zero Hardwords:** Textos de UI, mensagens de erro, placeholders e rÃ³tulos estÃ£o centralizados em constantes/i18n sem literais soltos?
-- [ ] **Zero Magic Colors:** Todas as cores provÃªm do Design System, AppTheme ou tokens globais sem valores soltos/hardcoded?
+- [ ] **Simplicidade:** O código evita superengenharia (YAGNI/KISS)?
+- [ ] **Zero Hardwords:** Textos de UI, mensagens de erro, placeholders e rótulos estão centralizados em constantes/i18n sem literais soltos?
+- [ ] **Zero Magic Colors:** Todas as cores provêm do Design System, AppTheme ou tokens globais sem valores soltos/hardcoded?
 
 ---
 

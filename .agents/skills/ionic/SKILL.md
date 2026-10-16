@@ -1,4 +1,4 @@
-﻿---
+---
 name: ionic
 description: >-
   Diretrizes, padrões e boas práticas para desenvolvimento de aplicações híbridas e mobile
@@ -60,5 +60,5 @@ flowchart TD
 
 ## Guardrail de Literais e Cores Globais no Ionic
 
-1. **Zero Hardwords:** RÃ³tulos, tÃ­tulos de pÃ¡ginas, alertas (IonAlert), toasts (IonToast) e textos de botÃµes devem ser extraÃ­dos para arquivos globais de constantes ou mÃ³dulos de i18n. Proibido texto solto em componentes.
-2. **Zero Magic Colors:** Utilize rigorosamente as variÃ¡veis de tema do Ionic (	heme/variables.scss) como --ion-color-primary, --ion-background-color, ou tokens customizados de Design System. Proibido estilizaÃ§Ã£o de cores inline ou hex solto em pÃ¡ginas.
+1. **Zero Hardwords:** Rótulos, títulos de páginas, alertas (IonAlert), toasts (IonToast) e textos de botões devem ser extraídos para arquivos globais de constantes ou módulos de i18n. Proibido texto solto em componentes.
+2. **Zero Magic Colors:** Utilize rigorosamente as variáveis de tema do Ionic (	heme/variables.scss) como --ion-color-primary, --ion-background-color, ou tokens customizados de Design System. Proibido estilização de cores inline ou hex solto em páginas.

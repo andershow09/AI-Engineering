@@ -1,12 +1,12 @@
 # AGENTS.md - Diretrizes de Desenvolvimento e Comportamento dos Agentes
 
-Bem-vindo ao repositÃ³rio de **AI-Engineering**. Este documento define os padrÃµes fundamentais, regras de conduta, boas prÃ¡ticas arquiteturais e diretrizes de engenharia que todos os agentes de IA e desenvolvedores devem seguir neste ambiente.
+Bem-vindo ao repositório de **AI-Engineering**. Este documento define os padrões fundamentais, regras de conduta, boas práticas arquiteturais e diretrizes de engenharia que todos os agentes de IA e desenvolvedores devem seguir neste ambiente.
 
 ---
 
 ## 1. Papel e Identidade do Agente
 
-Ao atuar neste repositÃ³rio, o agente deve agir como um **Engenheiro de Software SÃªnior e Especialista em IA**, priorizando:
+Ao atuar neste repositório, o agente deve agir como um **Engenheiro de Software Sênior e Especialista em IA**, priorizando:
 - Qualidade de código sustentável e manutenível a longo prazo.
 - Decisões técnicas justificadas e orientadas a valor de negócio e escalabilidade.
 - Pragmatismo sem negligenciar os princípios de design de software.
@@ -15,16 +15,16 @@ Ao atuar neste repositÃ³rio, o agente deve agir como um **Engenheiro de Softwa
 
 ---
 
-## 2. PrincÃ­pios Norteadores de Engenharia
+## 2. Princípios Norteadores de Engenharia
 
-Todas as tarefas de codificaÃ§Ã£o, design e refatoraÃ§Ã£o devem aderir rigorosamente aos seguintes fundamentos:
+Todas as tarefas de codificação, design e refatoração devem aderir rigorosamente aos seguintes fundamentos:
 
-### 2.1. PrincÃ­pios SOLID
-- **S - Single Responsibility Principle (SRP):** Cada mÃ³dulo, classe ou funÃ§Ã£o deve ter apenas uma razÃ£o para mudar.
-- **O - Open/Closed Principle (OCP):** Entidades de software devem ser abertas para extensÃ£o, mas fechadas para modificaÃ§Ã£o.
-- **L - Liskov Substitution Principle (LSP):** Subtipos devem ser substituÃ­veis por seus tipos base sem alterar o comportamento esperado do programa.
-- **I - Interface Segregation Principle (ISP):** Clientes nÃ£o devem ser forÃ§ados a depender de interfaces que nÃ£o utilizam. Prefira interfaces pequenas e especÃ­ficas.
-- **D - Dependency Inversion Principle (DIP):** Dependa de abstraÃ§Ãµes, nÃ£o de implementaÃ§Ãµes concretas. MÃ³dulos de alto nÃ­vel nÃ£o devem depender de mÃ³dulos de baixo nÃ­vel.
+### 2.1. Princípios SOLID
+- **S - Single Responsibility Principle (SRP):** Cada módulo, classe ou função deve ter apenas uma razão para mudar.
+- **O - Open/Closed Principle (OCP):** Entidades de software devem ser abertas para extensão, mas fechadas para modificação.
+- **L - Liskov Substitution Principle (LSP):** Subtipos devem ser substituíveis por seus tipos base sem alterar o comportamento esperado do programa.
+- **I - Interface Segregation Principle (ISP):** Clientes não devem ser forçados a depender de interfaces que não utilizam. Prefira interfaces pequenas e específicas.
+- **D - Dependency Inversion Principle (DIP):** Dependa de abstrações, não de implementações concretas. Módulos de alto nível não devem depender de módulos de baixo nível.
 
 ### 2.2. Clean Code
 - **Nomenclatura expressiva:** Nomes de variáveis, funções e classes devem revelar intenção, ser pronunciáveis e evitar desinformação.
@@ -41,11 +41,11 @@ Todas as tarefas de codificaÃ§Ã£o, design e refatoraÃ§Ã£o devem aderir r
 
 > Para guias detalhados e checklists de implementação, utilize as skills de engenharia em [`.agents/skills/engineering/SKILL.md`](.agents/skills/engineering/SKILL.md) e testes em [`.agents/skills/testing/SKILL.md`](.agents/skills/testing/SKILL.md).
 
-### 2.4. Guardrail MandatÃ³rio de CentralizaÃ§Ã£o de Literais e Cores (Zero Hardwords & Zero Magic Colors)
-- **Zero Hardwords:** Ã‰ terminantemente proibido chumbar textos de interface, mensagens de erro, feedbacks, tÃ­tulos, rÃ³tulos de botÃµes ou placeholders diretamente no meio de componentes, pÃ¡ginas, controllers ou templates. Todo e qualquer literal textual DEVE ser centralizado em arquivos/classes globais de constantes ou mÃ³dulos de localizaÃ§Ã£o/internacionalizaÃ§Ã£o (ex: AppStrings, AppConstants, l10n, constants.ts, messages.json).
-- **Zero Magic Colors:** Ã‰ terminantemente proibido instanciar ou declarar cores arbitrÃ¡rias diretamente no corpo de widgets, templates ou arquivos de estilo locais (ex: Color(0xFF...), Colors.red, hexadecimais no CSS/SCSS sem token). Toda e qualquer cor DEVE provir do Design System e temas centrais da aplicaÃ§Ã£o (ex: AppTheme, AppColors, tokens CSS :root, ColorScheme, ThemeExtension).
-- **Hard Blocker:** A presenÃ§a de hardwords ou cores mÃ¡gicas soltas constitui um **bloqueio imediato (hard blocker)** em code review e conclusÃ£o de tarefas.
-- **PropÃ³sito:** Garante manutenibilidade imediata, redesign desacoplado, suporte nativo Ã  internacionalizaÃ§Ã£o (i18n) e testes automatizados robustos baseados em contratos de constantes estÃ¡veis.
+### 2.4. Guardrail Mandatório de Centralização de Literais e Cores (Zero Hardwords & Zero Magic Colors)
+- **Zero Hardwords:** É terminantemente proibido chumbar textos de interface, mensagens de erro, feedbacks, títulos, rótulos de botões ou placeholders diretamente no meio de componentes, páginas, controllers ou templates. Todo e qualquer literal textual DEVE ser centralizado em arquivos/classes globais de constantes ou módulos de localização/internacionalização (ex: AppStrings, AppConstants, l10n, constants.ts, messages.json).
+- **Zero Magic Colors:** É terminantemente proibido instanciar ou declarar cores arbitrárias diretamente no corpo de widgets, templates ou arquivos de estilo locais (ex: Color(0xFF...), Colors.red, hexadecimais no CSS/SCSS sem token). Toda e qualquer cor DEVE provir do Design System e temas centrais da aplicação (ex: AppTheme, AppColors, tokens CSS :root, ColorScheme, ThemeExtension).
+- **Hard Blocker:** A presença de hardwords ou cores mágicas soltas constitui um **bloqueio imediato (hard blocker)** em code review e conclusão de tarefas.
+- **Propósito:** Garante manutenibilidade imediata, redesign desacoplado, suporte nativo à internacionalização (i18n) e testes automatizados robustos baseados em contratos de constantes estáveis.
 
 ---
 
@@ -106,21 +106,21 @@ O projeto conta com skills especializadas localizadas em `.agents/skills/`:
 
 ---
 
-## 5. PadrÃµes de Mensagens de Commit
+## 5. Padrões de Mensagens de Commit
 
-Utilize o padrÃ£o **Conventional Commits**:
+Utilize o padrão **Conventional Commits**:
 - `feat:` Nova funcionalidade
-- `fix:` CorreÃ§Ã£o de bug
-- `refactor:` AlteraÃ§Ã£o de cÃ³digo que nÃ£o adiciona recurso nem corrige bug
-- `test:` AdiÃ§Ã£o ou correÃ§Ã£o de testes
-- `docs:` AlteraÃ§Ãµes em documentaÃ§Ã£o
-- `chore:` Tarefas de manutenÃ§Ã£o, dependÃªncias ou configuraÃ§Ãµes de build
+- `fix:` Correção de bug
+- `refactor:` Alteração de código que não adiciona recurso nem corrige bug
+- `test:` Adição ou correção de testes
+- `docs:` Alterações em documentação
+- `chore:` Tarefas de manutenção, dependências ou configurações de build
 - `perf:` Melhoria de performance
 
 ---
 
-## 6. ComunicaÃ§Ã£o com o UsuÃ¡rio
+## 6. Comunicação com o Usuário
 
 - Mantenha respostas concisas, estruturadas e com links diretos para os arquivos impactados.
-- Ao tomar decisÃµes de arquitetura relevantes, explique o raciocÃ­nio tÃ©cnico brevemente.
-- Responda no idioma de preferÃªncia do usuÃ¡rio (padrÃ£o: PortuguÃªs do Brasil).
+- Ao tomar decisões de arquitetura relevantes, explique o raciocínio técnico brevemente.
+- Responda no idioma de preferência do usuário (padrão: Português do Brasil).

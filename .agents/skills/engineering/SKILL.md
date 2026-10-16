@@ -1,4 +1,4 @@
-﻿---
+---
 name: engineering
 description: >-
   Diretrizes e procedimentos de engenharia de software focados em princípios SOLID,
@@ -53,7 +53,7 @@ Durante a escrita do código:
 - Evite efeitos colaterais e parâmetros excessivos (agrupe em objetos/DTOs).
 - Trate erros de forma explícita com exceções de domínio; evite propagar `null`.
 - Aplique **DRY**, **KISS** e **YAGNI**.
-- **CentralizaÃ§Ã£o MandatÃ³ria de Literais e Cores (Zero Hardwords & Magic Colors):** Nunca declare textos/literais de UI ou cores arbitrÃ¡rias diretamente em componentes. Centralize em arquivos de constantes (AppStrings, constants.ts, i18n) e Design Tokens (AppTheme, AppColors, variÃ¡veis CSS).
+- **Centralização Mandatória de Literais e Cores (Zero Hardwords & Magic Colors):** Nunca declare textos/literais de UI ou cores arbitrárias diretamente em componentes. Centralize em arquivos de constantes (AppStrings, constants.ts, i18n) e Design Tokens (AppTheme, AppColors, variáveis CSS).
 
 > 📖 **Guia Completo de Clean Code:** Consulte [`clean-code.md`](./references/clean-code.md) para regras detalhadas e boas práticas.
 
