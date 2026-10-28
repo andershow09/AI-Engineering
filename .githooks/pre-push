@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# ==============================================================================
+# Git Guardrail: Pre-push Hook
+# Bloqueia push direto para 'main' ou 'master' conforme diretrizes da skill /git
+# ==============================================================================
+
+while read local_ref local_sha remote_ref remote_sha
+do
+    if [ "$remote_ref" = "refs/heads/main" ] || [ "$remote_ref" = "refs/heads/master" ]; then
+        echo ""
+        echo "❌ [GIT GUARDRAIL BLOCKED] Push direto para a branch 'main' é estritamente proibido!"
+        echo "👉 Conforme a skill /git e o AGENTS.md, você DEVE:"
+        echo "   1. Criar uma branch de trabalho: git checkout -b <tipo>/<nome-da-tarefa>"
+        echo "   2. Fazer push da sua branch:    git push -u origin <tipo>/<nome-da-tarefa>"
+        echo "   3. Abrir um Pull Request no GitHub para validação de CI e merge."
+        echo ""
+        exit 1
+    fi
+done
+
+exit 0

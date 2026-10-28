@@ -47,6 +47,13 @@ Todas as tarefas de codificação, design e refatoração devem aderir rigorosam
 - **Hard Blocker:** A presença de hardwords ou cores mágicas soltas constitui um **bloqueio imediato (hard blocker)** em code review e conclusão de tarefas.
 - **Propósito:** Garante manutenibilidade imediata, redesign desacoplado, suporte nativo à internacionalização (i18n) e testes automatizados robustos baseados em contratos de constantes estáveis.
 
+### 2.5. Guardrail Mandatório de Git e Branching (Zero Direct Push to Main)
+- **Zero Direct Push to Main:** É terminantemente proibido commitar ou executar `git push` diretamente na branch `main` ou `master`. Todo e qualquer agente ou desenvolvedor DEVE criar e trabalhar em uma branch dedicada com nomenclatura padronizada `<tipo>/<escopo-kebab-case>` (ex: `feat/virustotal-scanner`, `fix/redirect-login`, `chore/setup-ci`), conforme as diretrizes estritas da skill [`.agents/skills/git/SKILL.md`](.agents/skills/git/SKILL.md).
+- **Validação Pré-Merge (CI Gate):** Toda branch DEVE ser submetida exclusivamente via **Pull Request (PR)**, passando por 100% dos testes automatizados e validações de build antes do merge para a branch principal.
+- **Conventional Commits Obrigatório:** Toda mensagem de commit DEVE seguir rigorosamente o padrão Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `chore:`, `perf:`, etc.).
+- **Hard Blocker:** Qualquer tentativa de commitar ou fazer push direto na branch `main` constitui uma violação crítica e **bloqueio imediato (hard blocker)** de tarefa.
+- **Propósito:** Garante a estabilidade da produção, histórico linear auditável, rollback seguro e validação contínua em ambientes protegidos.
+
 ---
 
 ## 3. Fluxo de Trabalho Padrão do Agente (com Orquestração)
@@ -106,16 +113,20 @@ O projeto conta com skills especializadas localizadas em `.agents/skills/`:
 
 ---
 
-## 5. Padrões de Mensagens de Commit
+## 5. Padrões de Versionamento e Fluxo Git
 
-Utilize o padrão **Conventional Commits**:
-- `feat:` Nova funcionalidade
-- `fix:` Correção de bug
-- `refactor:` Alteração de código que não adiciona recurso nem corrige bug
-- `test:` Adição ou correção de testes
-- `docs:` Alterações em documentação
-- `chore:` Tarefas de manutenção, dependências ou configurações de build
-- `perf:` Melhoria de performance
+Todo agente DEVE seguir o fluxo operacional da skill [`git`](.agents/skills/git/SKILL.md):
+1. **Branch Atualizada:** Sincronizar com a base (`git checkout main && git pull origin main`).
+2. **Criação de Feature Branch:** `git checkout -b <tipo>/<nome-da-tarefa>` (NUNCA trabalhar na `main`).
+3. **Commits Semânticos (Conventional Commits):**
+   - `feat:` Nova funcionalidade
+   - `fix:` Correção de bug
+   - `refactor:` Alteração de código sem alteração de comportamento
+   - `test:` Adição ou correção de testes
+   - `docs:` Alterações em documentação
+   - `chore:` Tarefas de manutenção, dependências ou configurações de build
+   - `perf:` Melhoria de performance
+4. **Submissão via Pull Request:** Fazer push da branch de trabalho (`git push -u origin <tipo>/<nome-da-tarefa>`) e abrir Pull Request para revisão e validação da suíte de CI antes da mesclagem.
 
 ---
 
