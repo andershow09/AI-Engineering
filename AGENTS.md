@@ -135,3 +135,10 @@ Todo agente DEVE seguir o fluxo operacional da skill [`git`](.agents/skills/git/
 - Mantenha respostas concisas, estruturadas e com links diretos para os arquivos impactados.
 - Ao tomar decisões de arquitetura relevantes, explique o raciocínio técnico brevemente.
 - Responda no idioma de preferência do usuário (padrão: Português do Brasil).
+
+## Artefatos gerados e evidências
+
+Capturas/screenshots, exports de protótipo usados como evidência e resultados gerados de execução/testes devem ficar fora do Git, em .artifacts/<tarefa>/ ignorado ou no armazenamento aprovado de artifacts da CI/release. Código de teste, fixtures sintéticos autorais, specs/planos/tarefas e documentação autoral de procedimentos/links são versionáveis. Índices autorais podem registrar links, designRef, revisão e hash sem incorporar evidências completas. Não proíba imagens de produto, logos, ícones ou datasets/fixtures fonte por extensão. Siga [a política](.agents/policies/generated-artifacts.md); execute o guard --staged antes de cada commit e instale-o em novos projetos. É proibido git add -f de evidências, --no-verify, renomear saída como fixture ou relaxar guard/ignore. Histórico publicado não será reescrito. Hooks locais podem ser desabilitados; CI de cada repositório deve exigir o checker. Não afirme proteção remota sem evidência efetiva.
+
+
+Para instalação: `node .agents/scripts/install-evidence-guard.mjs --global` configura `~/.agents/git-hooks`; use `--repo <raiz>` quando configuração local de `core.hooksPath` prevalecer. Antes de commit: `node .agents/scripts/evidence-guard.mjs --staged`; auditoria também aceita `--tracked` e `--commits BASE HEAD`. Requer Node 20+ e Git 2.53+ (`git hook run --to-stdin`), preserva hooks/stdin e não impede bypass deliberado. CI/gate do servidor reforça o checker; isso não representa cobertura de testes.

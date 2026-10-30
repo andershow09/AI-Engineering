@@ -27,3 +27,11 @@ dist/
 build/
 .cache/
 tmp/
+
+# BEGIN HARNESS GENERATED EVIDENCE
+.artifacts/
+coverage/
+playwright-report/
+test-results/
+screenshots/
+# END HARNESS GENERATED EVIDENCE

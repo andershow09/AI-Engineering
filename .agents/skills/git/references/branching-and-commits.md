@@ -63,3 +63,10 @@ Formato padrão da mensagem de commit:
    git rebase -i HEAD~N
    ```
 3. **Submissão:** Abra o PR com descrição clara das mudanças, checklist de testes e contexto da tarefa.
+
+## Evidências geradas e commits
+
+Execute o guard de evidências sobre o índice (--staged) antes de cada commit e instale-o nos novos projetos pelo instalador disponível. Capturas/screenshots e resultados gerados de execução/testes ficam em .artifacts/<tarefa>/ ignorado ou no armazenamento aprovado de artifacts de CI/release. Consulte [a política](../../../policies/generated-artifacts.md); não use git add -f para evidências nem --no-verify para contornar o gate.
+
+
+Comandos disponíveis na raiz do AI-Engineering: `node .agents/scripts/evidence-guard.mjs --staged`, `--tracked` ou `--commits BASE HEAD`; instalar com `node .agents/scripts/install-evidence-guard.mjs --global` ou `--repo <raiz>`. O escopo e os requisitos estão na política vinculada acima.

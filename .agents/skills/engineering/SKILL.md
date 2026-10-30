@@ -65,3 +65,8 @@ Antes de entregar a solução:
 2. Execute o checklist de revisão contra todas as alterações realizadas.
 
 > 📋 **Checklist de Revisão:** Consulte [`code-review-checklist.md`](./references/code-review-checklist.md) para checagem ponto a ponto.
+
+Para evidências de execução/testes, mantenha capturas e resultados gerados fora do Git, em .artifacts/<tarefa>/ ignorado ou no armazenamento aprovado de artifacts da CI/release. Execute o guard staged (--staged) antes de cada commit e instale-o em novos projetos. Consulte [a política de artefatos gerados](../../policies/generated-artifacts.md).
+
+
+Use `node .agents/scripts/evidence-guard.mjs --staged` antes de cada commit. Para instalar, execute `node .agents/scripts/install-evidence-guard.mjs --global` ou `--repo <raiz>` se o repositório tiver configuração local de `core.hooksPath`; consulte a política vinculada acima.

@@ -51,3 +51,10 @@ flowchart TD
 
 - 📖 **[Estratégias de Branching e Commits Semânticos](./references/branching-and-commits.md):** Padrão Conventional Commits, nomenclatura de branches e ciclo de vida de Pull Requests.
 - 📖 **[Resolução de Conflitos e Recuperação](./references/troubleshooting.md):** Como lidar com conflitos de merge, comandos de desfazer (`revert` vs `reset`), uso do `reflog` e `stash`.
+
+## Evidências geradas
+
+Siga a política compartilhada em [artefatos gerados](../../policies/generated-artifacts.md). Execute o guard sobre o índice staged (--staged) antes de cada commit e instale-o em novos projetos pelo instalador, preservando hooks existentes. Capturas/screenshots e resultados de execução/testes gerados permanecem fora do Git.
+
+
+Use `node .agents/scripts/evidence-guard.mjs --staged` antes de cada commit. Instale com `node .agents/scripts/install-evidence-guard.mjs --global` ou `--repo <raiz>`; configurações locais de `core.hooksPath` prevalecem. Consulte a política para runtime, opções e limites.

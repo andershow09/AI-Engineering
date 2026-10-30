@@ -18,5 +18,15 @@
         "timeout": 15
       }
     ]
+  },
+  "evidence-guardrail": {
+    "enabled": true,
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node .agents/scripts/evidence-guard.mjs --staged",
+        "timeout": 15
+      }
+    ]
   }
 }
