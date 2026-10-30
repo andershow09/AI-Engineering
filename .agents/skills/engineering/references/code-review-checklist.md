@@ -38,3 +38,9 @@ Utilize este checklist como guia de verificação antes de submeter, aprovar ou 
 - [ ] O código introduzido segue o padrão de formatação e linting do projeto?
 - [ ] Não há números ou strings mágicas soltas sem constantes descritivas?
 - [ ] A alteração deixou a base de código mais limpa do que estava antes (Boy Scout Rule)?
+
+## Evidências geradas
+
+- [ ] Capturas/screenshots e resultados gerados de testes/execução estão fora do Git, em .artifacts/<tarefa>/ ignorado ou no armazenamento aprovado de artifacts de CI/release? O guard foi executado no índice staged (--staged) antes do commit?
+
+- [ ] `node .agents/scripts/evidence-guard.mjs --staged` passou antes do commit; hooks locais e gate CI estão compreendidos como controles distintos de cobertura de testes?

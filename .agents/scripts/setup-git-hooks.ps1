@@ -5,7 +5,7 @@ param()
 $ErrorActionPreference = "Stop"
 
 Write-Host "Configurando Git Hooks em .githooks/..." -ForegroundColor Cyan
-git config core.hooksPath .githooks
+node (Join-Path $PSScriptRoot 'install-evidence-guard.mjs') --repo (git rev-parse --show-toplevel)
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "[SUCESSO] core.hooksPath configurado para '.githooks'. Os commits agora executarao o pre-commit hook automaticamente!" -ForegroundColor Green
