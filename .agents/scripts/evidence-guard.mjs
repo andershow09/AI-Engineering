@@ -89,7 +89,11 @@ function runOriginalHook(cwd, hook, directory, global, input, args) {
   const temporary=mkdtempSync(path.join(tmpdir(),'harness-hook-'));
   try {
     const stdinPath=path.join(temporary,'stdin');writeFileSync(stdinPath,input,{mode:0o600});
-    const result=spawnSync('git',['-c',`core.hooksPath=${path.dirname(original)}`,'hook','run','--ignore-missing',`--to-stdin=${stdinPath}`,path.basename(original),'--',...args],{cwd,stdio:'inherit'});
+    // Newer Git requires explicit permission for preserved hooks with a backup suffix.
+    // Git 2.53 does not recognize this flag, so probe the installed command first.
+    const help=spawnSync('git',['hook','run','-h'],{cwd,encoding:'utf8'});
+    const allowBackup=`${help.stdout??''}${help.stderr??''}`.includes('--allow-unknown-hook-name')?['--allow-unknown-hook-name']:[];
+    const result=spawnSync('git',['-c',`core.hooksPath=${path.dirname(original)}`,'hook','run',...allowBackup,'--ignore-missing',`--to-stdin=${stdinPath}`,path.basename(original),'--',...args],{cwd,stdio:'inherit'});
     return result.status??2;
   } finally {
     const resolved=path.resolve(temporary);
