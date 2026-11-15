@@ -2,6 +2,11 @@
 
 Este documento fornece templates práticos para decompor cenários recorrentes de engenharia em subtarefas classificadas e roteáveis.
 
+> **Legenda de Roteamento de Modelos:**
+> - **`pro` (Análise / Arquitetura / Revisão):** `Claude Opus 5.5 (High)` (`claude-opus-5-5-high`) ou `Gemini 4 Argon (High)` (`gemini-4-argon-high`).
+> - **`flash` (Execução / Código / Testes):** `Gemini 4 Hydrogen (High / XHigh)` (`gemini-4-hydrogen-high` / `xhigh`), `Claude Sonnet 5.5` ou fallback `Gemini 3.8 Flash (High)`.
+> - **`flash_lite` (Pesquisa / Mapeamento Rápido):** `Gemini 4 Hydrogen (Low)` (`gemini-4-hydrogen-low`) ou `Gemini 3.8 Flash (Low)`.
+
 ---
 
 ## 1. Nova Feature (Greenfield)

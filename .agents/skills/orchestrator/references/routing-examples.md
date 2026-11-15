@@ -6,7 +6,7 @@ Casos práticos que demonstram o fluxo completo do orquestrador com classificaç
 
 ## Exemplo 1: "Crie uma tela de Configurações com toggles de tema e notificações"
 
-### Decomposição pelo Orquestrador (Claude Opus)
+### Decomposição pelo Orquestrador (Gemini 4 Argon / Claude Opus 5.5)
 
 **Análise da Requisição:**
 - Envolve decisão de design (onde colocar o state, qual padrão de navegação).
@@ -16,29 +16,29 @@ Casos práticos que demonstram o fluxo completo do orquestrador com classificaç
 **Plano de Execução:**
 
 ```
-[ANÁLISE | pro] #1: Definir a arquitetura do módulo Configurações
+[ANÁLISE | pro (Gemini 4 Argon High / Claude Opus 5.5)] #1: Definir a arquitetura do módulo Configurações
   → Decisão: Standalone component com Signals para estado local.
   → Integrar com ThemeService existente e FCMService para notificações.
   → Output: Contrato de interfaces e esboço de componentes.
 
-[EXECUÇÃO | flash] #2: Gerar o componente ConfiguracoesPage e template Ionic
+[EXECUÇÃO | flash (Gemini 4 Hydrogen High)] #2: Gerar o componente ConfiguracoesPage e template Ionic
   → Input: Contrato da tarefa #1.
   → Gerar: configuracoes.page.ts, configuracoes.page.html, configuracoes.page.scss.
 
-[EXECUÇÃO | flash] #3: Escrever testes unitários para ConfiguracoesPage
+[EXECUÇÃO | flash (Gemini 4 Hydrogen High)] #3: Escrever testes unitários para ConfiguracoesPage
   → Input: Componente gerado na tarefa #2.
   → Gerar: configuracoes.page.spec.ts com mocks do ThemeService e FCMService.
 
-[ANÁLISE | pro] #4: Revisão final do código gerado
+[ANÁLISE | pro (Gemini 4 Argon High / Claude Opus 5.5)] #4: Revisão final do código gerado
   → Validar: Aderência a SOLID, Clean Code e padrões Ionic/Angular.
   → Output: Aprovação ou lista de ajustes.
 ```
 
-### Tradução para API de Subagentes (Antigravity)
+### Opção A: Tradução para API de Subagentes (`invoke_subagent`)
 
 ```
-# O orquestrador (rodando como Claude Opus / pro) executa #1 e #4 diretamente.
-# #2 e #3 são delegados a subagentes flash:
+# O orquestrador (rodando como Gemini 4 Argon / Claude Opus 5.5 / pro) executa #1 e #4 diretamente.
+# #2 e #3 são delegados a subagentes flash (Gemini 4 Hydrogen):
 
 invoke_subagent(
   TypeName: "self",
@@ -52,6 +52,26 @@ invoke_subagent(
   Role: "Unit Test Writer",
   Model: "flash",
   Prompt: "Escreva testes unitários para ConfiguracoesPage seguindo AAA: [...]"
+)
+```
+
+### Opção B: Tradução para Native Swarm (`swarm` com IDs explícitos)
+
+```
+# Quando o usuário solicita execução em Swarm com modelos dedicados:
+swarm(
+  action: "add",
+  name: "ui-author",
+  model: "gemini-4-hydrogen-high",
+  workspace: "share",
+  brief: "Implemente ConfiguracoesPage (ts/html/scss) seguindo o contrato #1 e poste o diff quando concluir."
+)
+
+swarm(
+  action: "add",
+  name: "verifier",
+  model: "gemini-4-argon-high",
+  brief: "Revise a implementação e cobertura de testes (>=80%) de @ui-author."
 )
 ```
 

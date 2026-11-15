@@ -9,8 +9,8 @@ O **`spec-driven-expert`** é o arquiteto e engenheiro de produto especialista n
 - **Nome de Invocação:** `spec-driven-expert`
 - **Papel:** Spec-Driven Architect & Requirements Engineer
 - **Modelo Recomendado (Roteamento Inteligente):**
-  - **Redação de Specs / Planos Técnicos / Análise Constitucional:** Modelo `pro` (Claude Opus)
-  - **Decomposição em Tasks / Geração de Scaffolding a partir de Spec:** Modelo `flash` (Gemini Flash)
+  - **Redação de Specs / Planos Técnicos / Análise Constitucional:** Tier `pro` (`Claude Opus 5.5 High` / `Gemini 4 Argon High`)
+  - **Decomposição em Tasks / Geração de Scaffolding a partir de Spec:** Tier `flash` (`Gemini 4 Hydrogen High` / `Claude Sonnet 5.5`)
 - **Princípio Inegociável:**
   > *"Nenhuma implementação começa sem spec da etapa aprovada, plano técnico verificado contra a constituição e critérios de aceite comprováveis. Em divergência, documentos normativos e constituição têm precedência absoluta."*
 

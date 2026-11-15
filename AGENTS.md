@@ -62,8 +62,8 @@ Para qualquer modificação ou nova funcionalidade, siga o ciclo:
 
 1. **Orquestração e Decomposição (Quando Aplicável):**
    - Para tarefas complexas, decomponha a requisição em subtarefas atômicas.
-   - Classifique cada subtarefa como **Análise** (→ modelo `pro` / Claude Opus) ou **Execução** (→ modelo `flash` / Gemini Flash).
-   - Consulte a skill [`orchestrator`](.agents/skills/orchestrator/SKILL.md) para o protocolo completo e tabela de roteamento.
+   - Classifique cada subtarefa como **Análise** (→ tier `pro` / `Claude Opus 5.5` ou `Gemini 4 Argon`), **Execução** (→ tier `flash` / `Gemini 4 Hydrogen`, `Claude Sonnet 5.5` ou `Gemini 3.8 Flash`) ou **Pesquisa** (→ tier `flash_lite` / `Gemini 4 Hydrogen Low`).
+   - Consulte a skill [`orchestrator`](.agents/skills/orchestrator/SKILL.md) para o protocolo completo, uso de `invoke_subagent` vs `swarm` e tabela de roteamento.
 2. **Análise e Contextualização:**
    - Investigue o código existente antes de criar novas abstrações.
    - Compreenda os requisitos e restrições técnicas.
@@ -86,7 +86,7 @@ Para qualquer modificação ou nova funcionalidade, siga o ciclo:
 ## 4. Skills e Ferramentas do Projeto
 
 O projeto conta com skills especializadas localizadas em `.agents/skills/`:
-- **`orchestrator`** ([`.agents/skills/orchestrator/SKILL.md`](.agents/skills/orchestrator/SKILL.md)): Orquestração inteligente de tarefas com decomposição e roteamento por capacidade de modelo (Claude Opus para análise, Gemini Flash para execução).
+- **`orchestrator`** ([`.agents/skills/orchestrator/SKILL.md`](.agents/skills/orchestrator/SKILL.md)): Orquestração inteligente de tarefas com decomposição e roteamento por capacidade de modelo (Gemini 4 Argon / Claude Opus 5.5 para análise e coordenação; Gemini 4 Hydrogen / Claude Sonnet 5.5 / Gemini 3.8 Flash para execução).
 - **`engineering`** ([`.agents/skills/engineering/SKILL.md`](.agents/skills/engineering/SKILL.md)): Princípios SOLID, Clean Code, arquitetura limpa e checklist de revisão de código.
 - **`git`** ([`.agents/skills/git/SKILL.md`](.agents/skills/git/SKILL.md)): Fluxos de ramificação (branching), Conventional Commits, resolução de conflitos e recuperação segura.
 - **`testing`** ([`.agents/skills/testing/SKILL.md`](.agents/skills/testing/SKILL.md)): Pirâmide de testes, padrões unitários/mocking (AAA, FIRST), testes de integração e E2E.

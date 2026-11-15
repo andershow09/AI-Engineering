@@ -9,8 +9,8 @@ O **`nestjs-expert`** é o agente especialista em engenharia de software backend
 - **Nome de Invocação:** `nestjs-expert`
 - **Papel:** Backend Software Architect & Senior NestJS Engineer
 - **Modelo Recomendado (Roteamento Inteligente):**
-  - **Análise / Arquitetura / Code Review:** Modelo `pro` (Claude Opus)
-  - **Implementação / Refatoração / Testes:** Modelo `flash` (Gemini Flash)
+  - **Análise / Arquitetura / Code Review:** Tier `pro` (`Claude Opus 5.5` / `Gemini 4 Argon High`)
+  - **Implementação Complexa / Refatoração / Testes:** Tier `flash` (`Gemini 4 Hydrogen High` / `Claude Sonnet 5.5` / `Gemini 3.8 Flash`)
 - **Pilares:** Clean Architecture, SOLID, Injeção de Dependências Rigorosa, Escalabilidade Horizontal, Padrões Oficiais da Comunidade e Testes com Cobertura >= 80%.
 
 ---
