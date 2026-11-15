@@ -25,24 +25,48 @@ Esta skill transforma o agente em um **Orquestrador de Engenharia de IA**, capaz
 
 ## Modelo de Roteamento por Capacidade (Model Routing Table)
 
-O roteamento segue o princípio de **especialização cognitiva**: modelos de raciocínio profundo para análise e planejamento, modelos rápidos e eficientes para execução e geração de código.
+O roteamento segue o princípio de **especialização cognitiva**: modelos de raciocínio profundo para análise, arquitetura e orquestração; modelos de alta vazão e velocidade para execução, geração de código e varredura.
 
-### Tabela de Roteamento
+### Catálogo Ativo de Modelos no Antigravity
 
-| Classe de Tarefa | Modelo Preferencial | Parâmetro `Model` (Subagente) | Justificativa |
-| :--- | :--- | :--- | :--- |
-| **Análise Arquitetural** | Claude Opus (Thinking) | `pro` | Raciocínio em cadeia profundo para decisões de design com trade-offs |
-| **Code Review & Auditoria** | Claude Opus (Thinking) | `pro` | Capacidade superior de encontrar bugs sutis e violações de princípios |
-| **Planejamento de Testes** | Claude Opus (Thinking) | `pro` | Identificação de cenários de borda e estratégia de cobertura |
-| **Decisão de Tecnologia** | Claude Opus (Thinking) | `pro` | Avaliação comparativa ponderada de alternativas |
-| **Geração de Código** | Gemini 3.8 Flash (High) | `flash` | Alta velocidade de geração com qualidade consistente |
-| **Refatoração Guiada** | Gemini 3.8 Flash (High) | `flash` | Execução rápida seguindo plano já definido |
-| **Escrita de Testes** | Gemini 3.8 Flash (High) | `flash` | Geração eficiente de suítes com padrão AAA |
-| **Correção de Bugs** | Gemini 3.8 Flash (High) | `flash` | Aplicação cirúrgica de fixes pontuais |
-| **Documentação** | Gemini 3.8 Flash (High) | `flash` | Geração fluida de READMEs, JSDoc e comentários |
-| **Pesquisa de Codebase** | Gemini Flash (Light) | `flash_lite` | Varredura exploratória rápida sem necessidade de raciocínio profundo |
+| Família | Identificadores (`model` no Swarm / UI) | Perfil Cognitivo & Papel no Harness |
+| :--- | :--- | :--- |
+| **Gemini 4 Argon** | `gemini-pro-orchestrator-g1-pro` (*Orchestrator Argon*)<br>`gemini-4-argon-high` / `medium` / `low` | **Orquestração Central, Arquitetura & Raciocínio Profundo.** Flagship da geração Gemini 4 com variante dedicada de coordenação e alta disponibilidade de cota. |
+| **Gemini 4 Hydrogen** | `gemini-4-hydrogen-xhigh` / `high`<br>`gemini-4-hydrogen-medium` / `low` | **Execução Rápida de Nova Geração.** Codificação veloz, testes automatizados, refatoração guiada e exploração de codebase com 4 níveis de esforço. |
+| **Claude 5.5 Opus** | `claude-opus-5-5-high` / `medium` / `low` | **Análise Crítica, SDD (`spec.md`/`plan.md`) & Auditoria.** Raciocínio em cadeia para decisões arquiteturais complexas, code review rigoroso e modelagem formal. |
+| **Claude 5.5 Sonnet** | `claude-sonnet-5-5-high` / `medium` / `low` | **Implementação Full-Stack Complexa.** Equilíbrio entre raciocínio estrutural e escrita de código denso. |
+| **Gemini 3.8 Flash** | `gemini-3.8-flash-high` / `medium` / `low` | **Execução Econômica & Fallback.** Mantido para tarefas mecânicas rápidas e contingência de cota. |
 
-> **Regra de Fallback:** Se o modelo preferencial não estiver disponível ou o usuário não tiver especificado, utilize `inherit` (herda o modelo ativo da conversa).
+### Matriz de Roteamento por Classe de Tarefa
+
+| Classe de Tarefa | Modelo Primário Recomendado | Alternativa / Failover de Cota | Tier (`invoke_subagent`) | ID Direto (`swarm`) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Orquestração Central** | **Orchestrator (Argon)** / **Gemini 4 Argon (High)** | Claude Opus 5.5 (High) | `inherit` / `pro` | `gemini-pro-orchestrator-g1-pro` / `gemini-4-argon-high` |
+| **Análise Arquitetural & SDD** | **Claude Opus 5.5 (High)** / **Gemini 4 Argon (High)** | Claude Sonnet 5.5 (High) | `pro` | `claude-opus-5-5-high` / `gemini-4-argon-high` |
+| **Code Review & Auditoria** | **Claude Opus 5.5 (High)** / **Gemini 4 Argon (High)** | Claude Sonnet 5.5 (High) | `pro` | `claude-opus-5-5-high` / `gemini-4-argon-high` |
+| **Planejamento de Testes** | **Gemini 4 Argon (High)** / **Claude Opus 5.5 (High)** | Gemini 4 Argon (Medium) | `pro` | `gemini-4-argon-high` / `claude-opus-5-5-high` |
+| **Implementação Complexa** | **Gemini 4 Argon (Medium)** / **Claude Sonnet 5.5 (High)** | Gemini 4 Hydrogen (XHigh) | `inherit` / `pro` | `gemini-4-argon-medium` / `claude-sonnet-5-5-high` |
+| **Geração de Código & Features** | **Gemini 4 Hydrogen (High / XHigh)** | Gemini 3.8 Flash (High) | `flash` | `gemini-4-hydrogen-high` / `gemini-4-hydrogen-xhigh` |
+| **Refatoração Guiada** | **Gemini 4 Hydrogen (High)** | Gemini 3.8 Flash (High) | `flash` | `gemini-4-hydrogen-high` |
+| **Escrita de Testes (AAA)** | **Gemini 4 Hydrogen (High)** | Gemini 3.8 Flash (High) | `flash` | `gemini-4-hydrogen-high` |
+| **Correção de Bugs Pontuais** | **Gemini 4 Hydrogen (High)** | Claude Sonnet 5.5 (Medium) | `flash` | `gemini-4-hydrogen-high` |
+| **Documentação Técnica** | **Gemini 4 Hydrogen (Medium / High)** | Gemini 3.8 Flash (High) | `flash` | `gemini-4-hydrogen-medium` |
+| **Pesquisa de Codebase** | **Gemini 4 Hydrogen (Low)** | Gemini 3.8 Flash (Low) | `flash_lite` | `gemini-4-hydrogen-low` |
+
+---
+
+## Mecanismos de Invocação no Antigravity (`invoke_subagent` vs `swarm`)
+
+O Antigravity oferece duas APIs distintas para delegação de trabalho, cada uma com sua semântica de seleção de modelo:
+
+1. **Subagentes Hierárquicos (`invoke_subagent`):**
+   - Aceita **tiers abstratos** no parâmetro `Model`: `"inherit"`, `"pro"`, `"flash"` ou `"flash_lite"`.
+   - Use `"pro"` para tarefas da classe **ANÁLISE**, `"flash"` para **EXECUÇÃO**, `"flash_lite"` para **PESQUISA**, ou `"inherit"` para herdar o modelo ativo selecionado pelo usuário na sessão (ex: *Gemini 4 Argon*).
+2. **Native Swarm (`swarm` — Agentes Paralelos no Message Board):**
+   - Aceita o **ID explícito do modelo** (ex: `model: "gemini-4-argon-high"`, `model: "gemini-4-hydrogen-high"`, `model: "claude-opus-5-5-high"`). Por padrão, omitir `model` no `swarm{action: "add"}` mantém o worker no modelo da conversa atual.
+   - **Failover Dinâmico de Cota:** Consulte `swarm{action: "models"}` para inspecionar `quota_remaining`. Caso uma família esgote a cota durante a execução, migre o worker sem perda de contexto via `swarm{action: "model", name: "<worker>", model: "gemini-4-argon-high"}`.
+
+> **Regra de Fallback:** Se o modelo preferencial não estiver disponível ou o usuário não tiver especificado troca de modelo, utilize `inherit` (herda o modelo ativo da conversa).
 
 ---
 
@@ -51,12 +75,14 @@ O roteamento segue o princípio de **especialização cognitiva**: modelos de ra
 ```mermaid
 flowchart TD
     A["1. Recebe Requisição do Usuário"] --> B["2. Decompõe em Subtarefas Atômicas"]
-    B --> C["3. Classifica cada Subtarefa (Análise vs Execução)"]
-    C --> D{"4. Subtarefa é de Análise?"}
-    D -- Sim --> E["Executa com Modelo 'pro' (Claude Opus)"]
-    D -- Não --> F["Delega a Subagente com Modelo 'flash' (Gemini Flash)"]
-    E --> G["5. Consolida Resultados"]
+    B --> C["3. Classifica cada Subtarefa (Análise, Execução ou Pesquisa)"]
+    C --> D{"4. Qual a Classe da Subtarefa?"}
+    D -- Análise --> E["Executa em 'pro' (Claude Opus 5.5 / Gemini 4 Argon)"]
+    D -- Execução --> F["Delega em 'flash' (Gemini 4 Hydrogen / Sonnet 5.5)"]
+    D -- Pesquisa --> I["Delega em 'flash_lite' (Gemini 4 Hydrogen Low)"]
+    E --> G["5. Consolida Resultados e Valida Guardrails"]
     F --> G
+    I --> G
     G --> H["6. Apresenta Resultado Unificado ao Usuário"]
 ```
 

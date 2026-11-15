@@ -47,7 +47,7 @@ O repositório inclui pontes nativas (*bridges*) para as principais ferramentas 
 | Skill | Descrição | Principais Tópicos |
 | :--- | :--- | :--- |
 | [**`spec-driven`**](.agents/skills/spec-driven/SKILL.md) | Engenharia Guiada por Especificação (SDD) | Constituição de engenharia, tríade spec.md/plan.md/tasks.md, [NEEDS CLARIFICATION], precedência normativa e grafos de execução [P] |
-| [**`orchestrator`**](.agents/skills/orchestrator/SKILL.md) | Orquestração e Roteamento Inteligente | Decomposição de tarefas, Model Routing (Claude Opus para análise, Gemini Flash para execução), paralelismo de subagentes |
+| [**`orchestrator`**](.agents/skills/orchestrator/SKILL.md) | Orquestração e Roteamento Inteligente | Decomposição de tarefas, Model Routing (Gemini 4 Argon / Claude Opus 5.5 para análise, Gemini 4 Hydrogen / Claude Sonnet 5.5 / Gemini 3.8 Flash para execução), paralelismo via Subagents e Native Swarm |
 | [**`engineering`**](.agents/skills/engineering/SKILL.md) | Princípios de Engenharia de Software | SOLID (SRP, OCP, LSP, ISP, DIP), Clean Code, DRY, KISS, YAGNI, Code Review Checklist |
 | [**`git`**](.agents/skills/git/SKILL.md) | Versionamento e Operações Seguras | Conventional Commits, Estratégias de Branching, Resolução de Conflitos, Reflog, Stash |
 | [**`testing`**](.agents/skills/testing/SKILL.md) | Estratégia de Testes Automatizados | Pirâmide de Testes, Princípios F.I.R.S.T., AAA (Arrange-Act-Assert), Mocking, E2E |

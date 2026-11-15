@@ -28,7 +28,7 @@ O repositório possui pacotes de conhecimento especializado em `.agents/skills/`
 - **NestJS (Node.js):** Leia `.agents/skills/nestjs/SKILL.md` (Clean Architecture, Injeção de Dependências com Abstract Classes, Fastify, BullMQ/Redis, RFC 7807, cobertura >= 80%). Agente especialista: `.agents/agents/nestjs-expert.md`.
 - **Spec-Driven Development (SDD):** Leia `.agents/skills/spec-driven/SKILL.md` (Constituição de engenharia, tríade spec.md/plan.md/tasks.md, [NEEDS CLARIFICATION], precedência de contratos e paralelismo [P]). Agente especialista: `.agents/agents/spec-driven-expert.md`.
 
-> **Roteamento por Modelo:** Para tarefas complexas, o protocolo de orquestração define que subtarefas de **análise** (code review, arquitetura, diagnóstico) devem usar o modelo de raciocínio profundo (Claude Opus) e subtarefas de **execução** (geração de código, testes, refatoração) devem usar modelos rápidos (Gemini Flash). Consulte a tabela completa em `.agents/skills/orchestrator/SKILL.md`.
+> **Roteamento por Modelo:** Para tarefas complexas, o protocolo de orquestração define que subtarefas de **análise** (code review, arquitetura, SDD, diagnóstico) devem usar modelos de raciocínio profundo (`Claude Opus 5.5` / `Gemini 4 Argon` — tier `pro`) e subtarefas de **execução** (geração de código, testes, refatoração) devem usar modelos rápidos de nova geração (`Gemini 4 Hydrogen` / `Claude Sonnet 5.5` / `Gemini 3.8 Flash` — tier `flash`). Consulte a tabela completa em `.agents/skills/orchestrator/SKILL.md`.
 
 ---
 

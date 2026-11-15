@@ -56,8 +56,9 @@ As diretrizes abaixo se aplicam a todas as interações do GitHub Copilot (Chat,
 ## 3. Orquestração e Roteamento de Tarefas
 
 Para tarefas complexas, o repositório define um protocolo de orquestração em `.agents/skills/orchestrator/SKILL.md`:
-- **Tarefas de Análise** (arquitetura, code review, diagnóstico de bugs): Priorize modelos com raciocínio profundo (Claude Opus / `pro`).
-- **Tarefas de Execução** (geração de código, testes, refatoração): Priorize modelos rápidos e eficientes (Gemini Flash / `flash`).
+- **Tarefas de Análise** (arquitetura, SDD, code review, diagnóstico de bugs): Priorize modelos com raciocínio profundo (`Claude Opus 5.5` / `Gemini 4 Argon` / `pro`).
+- **Tarefas de Execução** (geração de código, testes, refatoração): Priorize modelos rápidos e eficientes (`Gemini 4 Hydrogen` / `Claude Sonnet 5.5` / `Gemini 3.8 Flash` / `flash`).
+- **Tarefas de Pesquisa** (mapeamento rápido de codebase): Priorize modelos leves (`Gemini 4 Hydrogen Low` / `flash_lite`).
 - Decomponha requisições complexas em subtarefas atômicas antes de iniciar a implementação.
 - Consulte os templates de decomposição em `.agents/skills/orchestrator/references/decomposition-patterns.md`.
 

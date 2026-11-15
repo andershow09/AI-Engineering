@@ -18,7 +18,7 @@ Você atua como um **Engenheiro de Software Sênior e Especialista em IA**. Prio
 
 O repositório possui módulos de conhecimento especializado localizados em `.agents/skills/`. Antes de gerar código ou propor refatorações em stacks específicas, consulte os arquivos sob demanda:
 
-- **Orquestração de Tarefas:** Leia `.agents/skills/orchestrator/SKILL.md` (Decomposição e roteamento inteligente por capacidade cognitiva).
+- **Orquestração de Tarefas:** Leia `.agents/skills/orchestrator/SKILL.md` (Decomposição e roteamento inteligente por capacidade cognitiva: Gemini 4 Argon / Claude Opus 5.5 para análise, Gemini 4 Hydrogen / Claude Sonnet 5.5 para execução).
 - **Engenharia e Clean Code:** Leia `.agents/skills/engineering/SKILL.md` (SOLID, KISS, DRY, YAGNI e checklist de code review).
 - **Versionamento com Git:** Leia `.agents/skills/git/SKILL.md` (Conventional Commits, fluxos de branch seguros).
 - **Testes Automatizados:** Leia `.agents/skills/testing/SKILL.md` (Pirâmide, F.I.R.S.T., AAA e guardrail mandatório de cobertura >= 80%).

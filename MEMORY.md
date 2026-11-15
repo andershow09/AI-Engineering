@@ -41,3 +41,9 @@ Este arquivo armazena lições aprendidas, decisões arquiteturais (ADRs leves),
 - **Regra Obrigatória:**
   1. **NUNCA** criar projetos de software, bibliotecas ou produtos dentro da árvore de diretórios do `AI-Engineering`.
   2. **SEMPRE** perguntar explicitamente ao usuário em qual diretório de destino o novo projeto deve ser criado antes de rodar qualquer scaffolding (`ng new`, `flutter create`, `create-next-app`, etc.).
+
+### [2026-11] Atualização do Catálogo de Modelos Antigravity (Gemini 4 Argon/Hydrogen & Claude 5.5)
+- **Contexto:** Introdução das famílias **Gemini 4 Argon** (`gemini-4-argon-high/medium/low`, `gemini-pro-orchestrator-g1-pro`), **Gemini 4 Hydrogen** (`gemini-4-hydrogen-xhigh/high/medium/low`), **Claude 5.5 Opus** (`claude-opus-5-5-high/medium/low`) e **Claude 5.5 Sonnet** (`claude-sonnet-5-5-high/medium/low`) no Antigravity.
+- **Padrão Estabelecido:**
+  1. Em chamadas `invoke_subagent`, manter o uso dos tiers abstratos do schema (`pro`, `flash`, `flash_lite`, `inherit`), que mapeiam automaticamente para os modelos topo de linha e de execução rápida ativos.
+  2. Em execuções paralelas via `swarm`, utilizar o modelo da conversa atual por padrão ou os identificadores explícitos (`gemini-4-argon-high`, `gemini-4-hydrogen-high`, `claude-opus-5-5-high`, `claude-sonnet-5-5-high`), aproveitando `swarm{action:"models"}` e `swarm{action:"model"}` para failover dinâmico de cota sem perda de contexto.

@@ -22,7 +22,7 @@ flowchart TD
         ENG["engineering (SOLID & Clean Code)"]
         GIT["git (Branching & Conventional Commits)"]
         TST["testing (Pirâmide & F.I.R.S.T.)"]
-        ORC["orchestrator (Model Routing & Task Decomposition)"]
+        ORC["orchestrator (Model Routing: Gemini 4 Argon/Hydrogen & Claude 5.5)"]
         ANG["angular (v22+, Signals & Zoneless)"]
         ION["ionic (Capacitor & Multiplataforma)"]
         FLU["flutter (MVVM & Riverpod/BLoC)"]
